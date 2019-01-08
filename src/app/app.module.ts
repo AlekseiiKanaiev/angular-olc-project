@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AppRouterModule } from './app.router.module';
+import { MainPageModule } from './main-page/main-page.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRouterModule,
+    MainPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

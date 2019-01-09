@@ -1,10 +1,24 @@
 .section{
     background: #444;
 }
-.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
+.navbar-nav .nav-link:hover, .dropdown-item:hover{
     cursor: pointer;
     color: #FF6B50;
+    transition: color 0.25s ease;
 }
-.dropdown-item:focus, .dropdown-item:hover{
+.navbar-nav .nav-link:focus, .dropdown-item:focus, .navbar-nav .active>.nav-link{
     color: #FF6B50;
+}
+
+.navbar-nav .dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.25s;
+    display: block;
+    z-index: -10;
+}
+
+.navbar-nav .dropdown-menu.show {
+    z-index: 1000;
+    max-height: 300px;
 }

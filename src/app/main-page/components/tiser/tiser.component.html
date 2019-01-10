@@ -1,0 +1,8 @@
+<div class="video">
+  <video class="fullscreen" loop autoplay src="../../../../assets/video/Site teaser.mp4"></video>
+  <div class="text description">
+    <div *ngIf="isUkr; then thenBlockText else elseBlockText"></div>   
+    <ng-template #thenBlockText><h2>Послуги з відеозйомки,<br/> фотозйомки та оренди</h2></ng-template>  
+    <ng-template #elseBlockText><h2>Услуги видеосъёмки,<br/> фотосъёмки и аренды</h2></ng-template> 
+  </div>
+</div>

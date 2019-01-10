@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainPageRouterModule } from './main-page.router.module';
 
 import { MainPageComponent } from './components/main-page.component';
+import { TiserComponent } from './components/tiser/tiser.component';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { MainPageComponent } from './components/main-page.component';
     MainPageRouterModule
   ],
   declarations: [
-    MainPageComponent
+    MainPageComponent,
+    TiserComponent
   ]
 })
 export class MainPageModule { }

@@ -7,13 +7,21 @@ import { LangSevice } from 'src/app/_services/lang.service';
     styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-    lang = '2';
+    lang = 'ukr';
+    isUkr = false;
 
     constructor (private langServ: LangSevice) {}
 
     ngOnInit() {
-        this.langServ.obsLang.subscribe(
-          () => this.lang = this.langServ.getLang()
-        );
+        this.getLang();
     }
+
+    private getLang() {
+        this.langServ.obsLang.subscribe(
+          () => {
+            this.lang = this.langServ.getLang();
+            this.isUkr = !this.isUkr;
+          }
+        );
+      }
 }

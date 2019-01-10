@@ -1,5 +1,5 @@
 <header>
-  <div class="section header">
+  <div class="section header my-header">
       <div class="container-fluid my-header-top">
           <div class="row"> 
               <div class="col-sm-12 col-md-2 left d-lg-flex justify-content-end align-items-start">
@@ -13,12 +13,21 @@
                   <img class="logo" src="assets/img/logo.svg" alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'" height="150px">
               </div>
               <div class="col-12 col-md-8">
-                  <h1 class="h-name">
-                    <!-- {{"КП ХОР " if lang=="ukr" else "КП ХОC "}} -->
-                    <span class="olc">
-                      <!-- {{'"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"' if lang=="ukr" else '"Областной логистический центр"'}} -->
-                    </span>
-                  </h1>
+                <h1 class="h-name">
+                    <div *ngIf="isUkr; then thenBlockHName else elseBlockHName"></div>   
+                    <ng-template #thenBlockHName>
+                        КП ХОР
+                        <span class="olc">
+                            "ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"
+                        </span>
+                    </ng-template>  
+                    <ng-template #elseBlockHName>
+                        КП ХОC
+                        <span class="olc">
+                            "Областной логистический центр"
+                        </span>
+                    </ng-template>
+                </h1>
                   <h6>
                       <div class="sm-h-phone d-md-none d-sm-block">
                           <i class="fas fa-mobile-alt"></i>
@@ -36,51 +45,58 @@
                                     <a class="nav-link" 
                                         [routerLink] = "['golovna']"
                                         [queryParams]="{'lang': lang }">
-                                        Main
-                                      <!-- {{"Головна" if lang=="ukr" else "Главная"}} -->
+                                        <div *ngIf="isUkr; then thenBlockMain else elseBlockMain"></div>   
+                                        <ng-template #thenBlockMain>Головна</ng-template>  
+                                        <ng-template #elseBlockMain>Главная</ng-template> 
                                     </a>
                                 </li>
                                 <li slide class="nav-item dropdown" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        Video
-                                        <!-- {{"Відеозйомка" if lang=="ukr" else "Видеосъёмка"}} -->
+                                        <div *ngIf="isUkr; then thenBlockVideo else elseBlockVideo"></div>   
+                                        <ng-template #thenBlockVideo>Відеозйомка</ng-template>  
+                                        <ng-template #elseBlockVideo>Видеосъёмка</ng-template> 
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" 
                                             [routerLink] = "['gallery','oblvideo']"
                                             [queryParams]="{'lang': lang }">
-                                            Video 1
-                                            <!-- {{"Відео для облради" if lang=="ukr" else "Видео для облсовета"}} -->
+                                            <div *ngIf="isUkr; then thenBlockVideo1 else elseBlockVideo1"></div>   
+                                            <ng-template #thenBlockVideo1>Відео для облради</ng-template>  
+                                            <ng-template #elseBlockVideo1>Видео для облсовета</ng-template>
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" 
                                             [routerLink] = "['gallery','privatvideo']"
                                             [queryParams]="{'lang': lang }">
-                                            Video 2  
-                                          <!-- {{"Відео на замовлення" if lang=="ukr" else "Видео на заказ"}} -->
+                                            <div *ngIf="isUkr; then thenBlockVideo2 else elseBlockVideo2"></div>   
+                                            <ng-template #thenBlockVideo2>Відео на замовлення</ng-template>  
+                                            <ng-template #elseBlockVideo2>Видео на заказ</ng-template>
                                         </a>
                                     </div>
                                 </li>
                                 <li slide class="nav-item dropdown" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        Realty
-                                        <!-- {{"Оренда" if lang=="ukr" else "Aренда"}} -->
+                                        <div *ngIf="isUkr; then thenBlockRealty else elseBlockRealty"></div>   
+                                        <ng-template #thenBlockRealty>Оренда</ng-template>  
+                                        <ng-template #elseBlockRealty>Aренда</ng-template>
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item"
                                             [routerLink] = "['orenda','realty']"
                                             [queryParams]="{'lang': lang }">
-                                            Realty 1  
-                                          <!-- {{"Оренда приміщень" if lang=="ukr" else "Аренда помещений"}} -->
+                                            <div *ngIf="isUkr; then thenBlockRealty1 else elseBlockRealty1"></div>   
+                                            <ng-template #thenBlockRealty1>Оренда приміщень</ng-template>  
+                                            <ng-template #elseBlockRealty1>Аренда помещений</ng-template>
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
                                             [routerLink] = "['orenda','vehiclerenta']"
                                             [queryParams]="{'lang': lang }">
-                                            Realty 2  
-                                          <!-- {{"Оренда автотранспорту" if lang=="ukr" else "Аренда автотранспорта"}} -->
+                                            <div *ngIf="isUkr; then thenBlockRealty2 else elseBlockRealty2"></div>   
+                                            <ng-template #thenBlockRealty2>Оренда автотранспорту</ng-template>  
+                                            <ng-template #elseBlockRealty2>Аренда автотранспорта</ng-template>
                                         </a>
                                     </div>
                                 </li>
@@ -88,16 +104,18 @@
                                     <a class="nav-link" 
                                         [routerLink] = "['aboutus']"
                                         [queryParams]="{'lang': lang }">
-                                        AboutUs    
-                                    <!-- {{"Про нас" if lang=="ukr" else "O нас"}} -->
+                                        <div *ngIf="isUkr; then thenBlockAboutUs else elseBlockAboutUs"></div>   
+                                        <ng-template #thenBlockAboutUs>Про нас</ng-template>  
+                                        <ng-template #elseBlockAboutUs>O нас</ng-template>
                                     </a>
                                 </li>
                                 <li class="nav-item" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         [routerLink] = "['contacts']"
                                         [queryParams]="{'lang': lang }">
-                                        Contacts    
-                                    <!-- {{"Контакти" if lang=="ukr" else "Контакты"}} -->
+                                        <div *ngIf="isUkr; then thenBlockContacts else elseBlockContacts"></div>   
+                                        <ng-template #thenBlockContacts>Контакти</ng-template>  
+                                        <ng-template #elseBlockContacts>Контакты</ng-template>
                                     </a>
                                 </li> 
                               </ul>
@@ -110,16 +128,17 @@
                       <i class="fas fa-mobile-alt"></i>
                       <!-- {{ main_user.phone }} -->
                   </div>
-                  <!-- <nav class="nav justify-content-center lang">
+                  <nav class="nav justify-content-center lang">
                       <li class="nav-item">
-                          <a class="nav-link {{ lang=='ukr' and 'active' }}" id = 'ukr' 
-                              href="{{request.path}}?lang=ukr">укр</a>
+                          <button (click)="onClick('rus')">rus</button>
+                          <!-- <a class="nav-link" id = 'ukr' 
+                              href="{{request.path}}?lang=ukr">укр</a> -->
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link {{ lang=='rus' and 'active' }}" id = 'rus' 
-                              href = "{{request.path}}?lang=rus">рус</a>
+                          <!-- <a class="nav-link {{ lang=='rus' and 'active' }}" id = 'rus' 
+                              href = "{{request.path}}?lang=rus">рус</a> -->
                       </li>
-                  </nav> -->
+                  </nav>
               </div>
           </div>
       </div>

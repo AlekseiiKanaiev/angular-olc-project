@@ -1,5 +1,93 @@
-.section{
-    background: #444;
+
+.my-header {
+    text-align: center;
+    width: 100%; }
+    .my-header .container-fluid {
+      background-color: rgba(68, 68, 68, 0.8); }
+      .my-header .container-fluid .admin-link, .my-header .container-fluid .home-link {
+        width: 100%;
+        margin: auto; }
+        .my-header .container-fluid .admin-link a, .my-header .container-fluid .home-link a{
+          color: white; }
+          .my-header .container-fluid .admin-link a:hover, .my-header .container-fluid .home-link a:hover {
+            color: #FF6B50;
+            -webkit-transition: color 0.25s ease;
+            -o-transition: color 0.25s ease;
+            transition: color 0.25s ease; }
+      .my-header .container-fluid .login-center {
+        margin: auto; }
+    .my-header .logo {
+      bottom: 20px;
+      width: 65px;
+      height: auto; }
+    .my-header .h-name, .my-simple-header .h-name, .my-login-header .h-name {
+      color: #FF6B50;
+      margin: 10px 0 0 0; }
+    .my-header .sm-h-phone, .my-simple-header .sm-h-phone, .my-login-header .sm-h-phone {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 16px; }
+    .my-header .menu .dropdown-menu, .my-simple-header .menu .dropdown-menu, .my-login-header .menu .dropdown-menu {
+      margin: auto;
+      opacity: 0.8;
+      max-width: 150px;
+      background-color: #e6e6e6; }
+      .my-header .menu .dropdown-menu .dropdown-item, .my-simple-header .menu .dropdown-menu .dropdown-item, .my-login-header .menu .dropdown-menu .dropdown-item {
+        white-space: normal;
+        font-size: 14px;
+        padding: 0 10px; }
+        .my-header .menu .dropdown-menu .dropdown-item:hover, .my-simple-header .menu .dropdown-menu .dropdown-item:hover, .my-login-header .menu .dropdown-menu .dropdown-item:hover {
+          background-color: #e6e6e6;
+          color: #FF6B50;
+          -webkit-transition: color .25s ease;
+          -o-transition: color .25s ease;
+          transition: color .25s ease; }
+    .my-header .navbar-dark, .my-simple-header .navbar-dark, .my-login-header .navbar-dark {
+      padding: 0; }
+      .my-header .navbar-dark button, .my-simple-header .navbar-dark button, .my-login-header .navbar-dark button {
+        -webkit-column-rule-color: #FF6B50;
+           -moz-column-rule-color: #FF6B50;
+                column-rule-color: #FF6B50; }
+      .my-header .navbar-dark .navbar-toggler, .my-simple-header .navbar-dark .navbar-toggler, .my-login-header .navbar-dark .navbar-toggler {
+        -webkit-box-align: end;
+        -webkit-align-items: flex-end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        border-color: #FF6B50; }
+      .my-header .navbar-dark .collapsed, .my-simple-header .navbar-dark .collapsed, .my-login-header .navbar-dark .collapsed {
+        border-color: rgba(255, 255, 255, 0.5); }
+        .my-header .navbar-dark .navbar-nav .nav-link:hover, .my-simple-header .navbar-dark .navbar-nav .nav-link:hover, .my-login-header .navbar-dark .navbar-nav .nav-link:hover {
+          color: #FF6B50;
+          -webkit-transition: color .5s ease;
+          -o-transition: color .5s ease;
+          transition: color .5s ease; }
+      .my-header .navbar-dark .navbar-nav .active, .my-simple-header .navbar-dark .navbar-nav .active, .my-login-header .navbar-dark .navbar-nav .active {
+        color: #FF6B50; }
+    .my-header .h-phone, .my-simple-header .h-phone, .my-login-header .h-phone {
+      margin: 10px 0;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      white-space: nowrap; }
+      .my-header .h-phone .fa-mobile-alt, .my-simple-header .h-phone .fa-mobile-alt, .my-login-header .h-phone .fa-mobile-alt {
+        margin-right: 8px;
+        font-size: 16px; }
+    .my-header .lang, .my-simple-header .lang, .my-login-header .lang {
+      font-size: 13px; }
+      .my-header .lang .nav-link, .my-simple-header .lang .nav-link, .my-login-header .lang .nav-link {
+        color: #fff; }
+        .my-header .lang .nav-link:hover, .my-simple-header .lang .nav-link:hover, .my-login-header .lang .nav-link:hover {
+          color: #FF6B50;
+          -webkit-transition: color .5s ease;
+          -o-transition: color .5s ease;
+          transition: color .5s ease; }
+      .my-header .lang .active, .my-simple-header .lang .active, .my-login-header .lang .active {
+        color: #FF6B50; }
+
+
+h1{
+    font-size: 23px;
+}
+.navbar-nav .nav-link{
+    color: white;
 }
 .navbar-nav .nav-link:hover, .dropdown-item:hover{
     cursor: pointer;
@@ -13,12 +101,16 @@
 .navbar-nav .dropdown-menu {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.25s;
     display: block;
-    z-index: -10;
+    /* z-index: -1000; */
+    border: none;
+    visibility: hidden;
+    transition: all 0.25s ease;
 }
 
 .navbar-nav .dropdown-menu.show {
-    z-index: 1000;
-    max-height: 300px;
+    visibility: visible;
+    /* z-index: 1000; */
+    max-height: 500px;
+    /* border: 1px solid #000; */
 }

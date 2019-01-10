@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-main-page-comp',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
     styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent {
-
+    @Input() lang = '2';
 }

@@ -11,6 +11,7 @@ import { OrendaPagesModule } from './orenda-pages/orenda-pages.module';
 import { AboutusPageModule } from './aboutus-page/aboutus-page.module';
 import { ContactsPageModule } from './contacts-page/contacts-page.module';
 import { GetQueryParamsService } from './services/get-query-params.service';
+import { LangSevice } from './services/lang.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GetQueryParamsService } from './services/get-query-params.service';
     ContactsPageModule,
   ],
   providers: [
-    GetQueryParamsService
+    GetQueryParamsService,
+    LangSevice
   ],
   bootstrap: [AppComponent]
 })

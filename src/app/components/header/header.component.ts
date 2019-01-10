@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
-import { GetQueryParamsService } from 'src/app/services/get-query-params.service';
-import { ActivatedRoute } from '@angular/router';
+import { LangSevice } from 'src/app/services/lang.service';
 
 @Component({
   selector: 'app-header',
@@ -11,26 +10,18 @@ export class HeaderComponent implements OnInit {
   isUkr = true;
   lang = 'ukr';
 
-  constructor(private element: ElementRef, private gqp: GetQueryParamsService, private activeRoute: ActivatedRoute) { }
+  constructor(private langServ: LangSevice) { }
 
   ngOnInit() {
-    console.log(1);
-    this.activeRoute.queryParams.subscribe(
-      (params) => {
-        if (params['lang']) {
-          if (params['lang'] !== this.lang) {
-            this.isUkr = !this.isUkr;
-          }
-          this.lang = params['lang'];
-        }
-      }
+    this.langServ.obsLang.subscribe(
+      () => this.lang = this.langServ.getLang()
     );
   }
 
   onClick(lang) {
     if (this.lang !== lang) {
       this.isUkr = !this.isUkr;
-      this.lang = lang;
+      this.langServ.setLang(lang);
     }
   }
 }

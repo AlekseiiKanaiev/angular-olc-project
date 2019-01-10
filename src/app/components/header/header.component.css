@@ -89,7 +89,7 @@ h1{
 .navbar-nav .nav-link{
     color: white;
 }
-.navbar-nav .nav-link:hover, .dropdown-item:hover{
+.navbar-nav .nav-link:hover, .nav-link:hover, .dropdown-item:hover{
     cursor: pointer;
     color: #FF6B50;
     transition: color 0.25s ease;

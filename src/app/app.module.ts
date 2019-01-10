@@ -1,17 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AppRouterModule } from './app.router.module';
 import { MainPageModule } from './main-page/main-page.module';
-import { SlideDirective } from './directives/slide.directive';
+import { SlideDirective } from './_directives/slide.directive';
 import { VideoPagesModule } from './video-pages/video-pages.module';
 import { OrendaPagesModule } from './orenda-pages/orenda-pages.module';
 import { AboutusPageModule } from './aboutus-page/aboutus-page.module';
 import { ContactsPageModule } from './contacts-page/contacts-page.module';
-import { GetQueryParamsService } from './services/get-query-params.service';
-import { LangSevice } from './services/lang.service';
+import { LangSevice } from './_services/lang.service';
+import { GetDataService } from './_services/getData.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LangSevice } from './services/lang.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRouterModule,
     MainPageModule,
     VideoPagesModule,
@@ -29,8 +31,8 @@ import { LangSevice } from './services/lang.service';
     ContactsPageModule,
   ],
   providers: [
-    GetQueryParamsService,
-    LangSevice
+    LangSevice,
+    GetDataService
   ],
   bootstrap: [AppComponent]
 })

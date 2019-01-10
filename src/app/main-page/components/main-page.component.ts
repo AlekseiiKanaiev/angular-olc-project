@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LangSevice } from 'src/app/services/lang.service';
+import { LangSevice } from 'src/app/_services/lang.service';
 
 @Component({
     selector: 'app-main-page-comp',

@@ -1,0 +1,11 @@
+body{
+    line-height: 1.75;
+    min-width: 320px;
+    background-color: #444444;
+    position: relative;
+    font-size: 16px;
+    /* font-family: $default-font; */
+    overflow-x: hidden;
+    opacity: 1;
+}
+    

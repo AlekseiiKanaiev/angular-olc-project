@@ -10,13 +10,13 @@ import { CheckDEviceService } from 'src/app/_services/checkDevice.service';
 export class MainPageComponent implements OnInit {
     private lang = 'ukr';
     private isUkr = true;
-    private isMob = false;
+    private isNotMob = false;
 
     constructor (private langServ: LangSevice, private chdev: CheckDEviceService) {}
 
     ngOnInit() {
         this.getLang();
-        this.isMob = (!this.chdev.checkDeviceMobile() && !this.chdev.checkDeviceTablet());
+        this.isNotMob = (!this.chdev.checkDeviceMobile() && !this.chdev.checkDeviceTablet());
     }
 
     private getLang() {

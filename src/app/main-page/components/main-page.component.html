@@ -1,6 +1,6 @@
-<div *ngIf="isMob; then thenBlock else elseBlock"></div>   
+<div *ngIf="isNotMob; then thenBlock else elseBlock"></div>   
 <ng-template #thenBlock>
-    <app-tiser [isUkr] = 'isUkr'></app-tiser>
+    <app-video-tiser [isUkr] = 'isUkr'></app-video-tiser>
 </ng-template>  
 <ng-template #elseBlock>
     <app-carousel-tiser [isUkr] = 'isUkr'></app-carousel-tiser>

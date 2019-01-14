@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TiserComponent } from './tiser.component';
+import { VideoTiserComponent } from './video-tiser.component';
 
 describe('TiserComponent', () => {
-  let component: TiserComponent;
-  let fixture: ComponentFixture<TiserComponent>;
+  let component: VideoTiserComponent;
+  let fixture: ComponentFixture<VideoTiserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TiserComponent ]
+      declarations: [ VideoTiserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TiserComponent);
+    fixture = TestBed.createComponent(VideoTiserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

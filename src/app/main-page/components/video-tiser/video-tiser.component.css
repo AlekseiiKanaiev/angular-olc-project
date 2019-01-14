@@ -1,0 +1,34 @@
+.video {
+    /* position: absolute; */
+    width: 100%;
+    height: 90vh;
+    /* top: 0; */
+    /* z-index: -1000; */
+    /* display: block; */
+    position: relative;
+}
+
+.fullscreen {
+    object-fit: cover;
+    height: 65vh;
+    /* height: 100%; */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1000;
+}
+
+.text {
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    width: 100%;
+    /* transform: translate(0,-50%); */
+    font-size: 36px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 0.2rem rgba(255, 107, 80, 0.7);
+}
+
+h2 {
+    color: #fff;
+}

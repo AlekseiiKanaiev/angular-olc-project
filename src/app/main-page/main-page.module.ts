@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainPageRouterModule } from './main-page.router.module';
 
 import { MainPageComponent } from './components/main-page.component';
-import { TiserComponent } from './components/tiser/tiser.component';
+import { VideoTiserComponent } from './components/video-tiser/video-tiser.component';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { CarouselTiserComponent } from './components/carousel-tiser/carousel-tiser.component';
 import { CheckDEviceService } from '../_services/checkDevice.service';
@@ -15,7 +15,7 @@ import { CheckDEviceService } from '../_services/checkDevice.service';
   ],
   declarations: [
     MainPageComponent,
-    TiserComponent,
+    VideoTiserComponent,
     CarouselTiserComponent,
     AdvantagesComponent
   ],

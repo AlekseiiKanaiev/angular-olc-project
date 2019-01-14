@@ -1,0 +1,12 @@
+.lang {
+    font-size: 13px; }
+.lang .nav-link {
+    color: #fff; }
+.lang .nav-link:hover {
+    cursor: pointer;
+    color: #FF6B50;
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease; }
+.lang .active {
+    color: #FF6B50; }

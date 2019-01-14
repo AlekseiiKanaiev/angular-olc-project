@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./tiser.component.css']
 })
 export class TiserComponent implements OnInit {
-  @Input() isUkr: boolean;
+  @Input() private isUkr: boolean;
 
   constructor() { }
 

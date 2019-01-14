@@ -70,17 +70,7 @@
       .my-header .h-phone .fa-mobile-alt, .my-simple-header .h-phone .fa-mobile-alt, .my-login-header .h-phone .fa-mobile-alt {
         margin-right: 8px;
         font-size: 16px; }
-    .my-header .lang, .my-simple-header .lang, .my-login-header .lang {
-      font-size: 13px; }
-      .my-header .lang .nav-link, .my-simple-header .lang .nav-link, .my-login-header .lang .nav-link {
-        color: #fff; }
-        .my-header .lang .nav-link:hover, .my-simple-header .lang .nav-link:hover, .my-login-header .lang .nav-link:hover {
-          color: #FF6B50;
-          -webkit-transition: color .5s ease;
-          -o-transition: color .5s ease;
-          transition: color .5s ease; }
-      .my-header .lang .active, .my-simple-header .lang .active, .my-login-header .lang .active {
-        color: #FF6B50; }
+    
 
 
 h1{
@@ -114,3 +104,6 @@ h1{
     max-height: 500px;
     /* border: 1px solid #000; */
 }
+/* .active {
+  color: #FF6B50;
+} */

@@ -128,20 +128,7 @@
                       <i class="fas fa-mobile-alt"></i>
                       {{ (mainUser)? mainUser.phone : 9999999 }}
                   </div>
-                  <nav class="nav justify-content-center lang">
-                      <li class="nav-item" routerLinkActive = "active">
-                        <a class="nav-link" id = 'rus' 
-                        (click)="onClick('rus')">
-                            рус
-                        </a>
-                      </li>
-                      <li class="nav-item" routerLinkActive = "active">
-                        <a class="nav-link" id = 'ukr' 
-                        (click)="onClick('ukr')">
-                            укр
-                        </a>
-                      </li>
-                  </nav>
+                  <app-switch-lang (onClick) = "switchLang($event)" [isUkr] = "isUkr"></app-switch-lang>
               </div>
           </div>
       </div>

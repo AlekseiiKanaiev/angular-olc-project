@@ -13,11 +13,13 @@ import { AboutusPageModule } from './aboutus-page/aboutus-page.module';
 import { ContactsPageModule } from './contacts-page/contacts-page.module';
 import { LangSevice } from './_services/lang.service';
 import { GetDataService } from './_services/getData.service';
+import { SwitchLangComponent } from './components/header/switch-lang/switch-lang.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    SwitchLangComponent,
     SlideDirective
   ],
   imports: [

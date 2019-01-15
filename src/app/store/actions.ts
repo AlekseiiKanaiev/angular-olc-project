@@ -1,0 +1,9 @@
+const GETMAINUSER = 'GETMAINUSER';
+const GETUSERS = 'GETUSERS';
+const GETVIDEOS = 'GETVIDEOS';
+
+export default {
+    GETMAINUSER,
+    GETUSERS,
+    GETVIDEOS
+};

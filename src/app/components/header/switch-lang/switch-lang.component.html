@@ -1,0 +1,16 @@
+<nav class="nav justify-content-center lang">
+    <li class="nav-item" >
+      <a class="nav-link" id = 'rus' 
+      [ngClass]="{active: !isUkr}"
+      (click)="switchLang('rus')">
+          рус
+      </a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" id = 'ukr'
+      [ngClass]="{active: isUkr}"
+      (click)="switchLang('ukr')">
+          укр
+      </a>
+    </li>
+</nav>

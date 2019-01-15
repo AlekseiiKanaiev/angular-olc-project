@@ -1,0 +1,44 @@
+.last-video {
+    background-color: #183E66;
+    -webkit-background-size: cover;
+            background-size: cover;
+    text-align: center;
+    color: white; }
+.last-video-header {
+    padding-top: 20px; }
+.last-video-video {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+.last-video-video .title {
+    font-weight: 300;
+    letter-spacing: 3px;
+    padding-right: 10px;
+    padding-left: 10px; }
+.last-video-video iframe {
+    background-image: url(../../../../assets/img/loader.gif);
+    -webkit-background-size: 50px 50px;
+            background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center; }
+.last-video-button .btn {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    background-color: grey;
+    opacity: 0.9;
+    border: none;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    margin: 0px 60px 30px; }
+.last-video-button .btn:hover {
+    opacity: 1;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease; }
+.last-video-button .main {
+    background-color: #FF6B50; }

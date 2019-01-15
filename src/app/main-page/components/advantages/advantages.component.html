@@ -1,0 +1,46 @@
+<div class="container-fluid advantage">
+    <div class="row">
+        <div class="col advantage-header">
+            <h2>
+              <div *ngIf="isUkr; then thenBlockHeader else elseBlockHeader"></div>   
+              <ng-template #thenBlockHeader>
+                  наші пріоритети
+              </ng-template>  
+              <ng-template #elseBlockHeader>
+                  наши приоритеты
+              </ng-template>
+            </h2>
+        </div>
+    </div>
+    <div class="row advantage-content">
+        <div *ngIf="isUkr; then thenBlock else elseBlock"></div>   
+        <ng-template #thenBlock>
+            <div class="col-12 col-sm-3 advantage-item">
+                Ми знаходимося в центрі останніх подій Харківської&#160;області
+            </div>
+            <div class="col-12 col-sm-3 advantage-item">
+                Ми відчинені для всього нового та дивимося на світ по&#8209;сучасному
+            </div>
+            <div class="col-12 col-sm-3 advantage-item">
+                “Роби швидко, будь пунктуальним” — ось наш девіз
+            </div>
+            <div class="col-12 col-sm-3 advantage-item">
+                Ми прагнемо досягти найкращого результату, тому працюємо на сучасному обладнанні
+            </div>
+        </ng-template>  
+        <ng-template #elseBlock>
+            <div class="col-12 col-sm-3 advantage-item">
+                Мы находимся в центре последних событий Харьковской&#160;области
+            </div>
+            <div class="col-12 col-sm-3 advantage-item">
+                Мы открыты для всего нового и современно смотрим на мир
+            </div>
+            <div class="col-12 col-sm-3 advantage-item">
+                “Делай быстро, будь пунктуальным” — вот наш девиз
+            </div>
+            <div class="col-12 col-sm-3 advantage-item">
+                Мы хотим достичь лучшего результата, поэтому работаем на современном оборудовании
+            </div>
+        </ng-template>
+    </div>
+</div>

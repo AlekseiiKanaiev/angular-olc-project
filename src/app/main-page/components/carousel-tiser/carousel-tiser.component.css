@@ -1,0 +1,39 @@
+#my-carousel .carousel-item {
+    height: 85vh; }
+  
+#my-carousel .carousel-caption {
+    text-shadow: 0 0 1rem #ff6b50;
+    top: 65%; }
+#my-carousel .carousel-caption .utils {
+    margin-top: -35px; }
+#my-carousel .carousel-caption a {
+    background-color: #FF6B50;
+    opacity: 0.8;
+    border: none; }
+#my-carousel .carousel-caption a:hover {
+    color: #ffffff;
+    opacity: 1;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease; }
+
+#my-carousel a:hover {
+    color: #FF6B50;
+    -webkit-transition: color .25s ease;
+    -o-transition: color .25s ease;
+    transition: color .25s ease; }
+
+#my-carousel a svg {
+    font-size: 30px; }
+
+#my-carousel ol li {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    margin: 0 6px; }
+#my-carousel ol li:hover {
+    cursor: pointer; }
+
+#my-carousel ol .active {
+    background-color: #FF6B50; }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { LangSevice } from 'src/app/_services/lang.service';
 import { GetDataService } from 'src/app/_services/getData.service';
 import { User } from 'src/app/_models/user.model';
@@ -9,38 +9,37 @@ import { User } from 'src/app/_models/user.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private isUkr = false;
+  private isUkr = true;
   private lang = 'ukr';
-  mainUser: User;
+  private mainUser: User;
 
   constructor(private langServ: LangSevice, private getDateServ: GetDataService) { }
 
   ngOnInit() {
-    console.log(this.mainUser);
     this.getLang();
     this.getMainUser();
-  }
-
-  private onClick(lang) {
-    if (this.lang !== lang) {
-      this.langServ.setLang(lang);
-    }
   }
 
   private getLang() {
     this.langServ.obsLang.subscribe(
       () => {
-        this.lang = this.langServ.getLang();
-        this.isUkr = !this.isUkr;
+        this.lang = this.langServ.obsLang.getValue();
+        this.isUkr = (this.lang === 'ukr');
       }
     );
   }
 
   private getMainUser() {
-    this.getDateServ.getMainUser().subscribe(
-      (user) => {
-        this.mainUser = user;
+    this.getDateServ.obsMainUser.subscribe(
+      (data) => {
+        this.mainUser = data;
       }
     );
+  }
+
+  private switchLang(lang: string) {
+    if (this.lang !== lang) {
+      this.langServ.setLang(lang);
+    }
   }
 }

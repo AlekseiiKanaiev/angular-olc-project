@@ -1,0 +1,18 @@
+.advantage {
+    margin-top: -6px;
+    text-align: center;
+    background-color: #dddddd;
+    -webkit-background-size: cover;
+            background-size: cover;
+    height: 300px; }
+.advantage-header {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 20px; }
+.advantage-item {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+.advantage .advantage-content {
+    padding-right: 20px;
+    padding-left: 20px; }

@@ -29,7 +29,7 @@ export class MainPageComponent implements OnInit {
     private getLang() {
         this.langServ.obsLang.subscribe(
           () => {
-            this.lang = this.langServ.getLang();
+            this.lang = this.langServ.obsLang.getValue();
             this.isUkr = (this.lang === 'ukr');
           }
         );

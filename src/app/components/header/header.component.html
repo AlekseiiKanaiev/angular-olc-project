@@ -43,8 +43,7 @@
                               <ul class="navbar-nav">
                                 <li class="nav-item" routerLinkActive = "active">
                                     <a class="nav-link" 
-                                        [routerLink] = "['golovna']"
-                                        [queryParams]="{'lang': lang }">
+                                        [routerLink] = "['golovna']">
                                         <div *ngIf="isUkr; then thenBlockMain else elseBlockMain"></div>   
                                         <ng-template #thenBlockMain>Головна</ng-template>  
                                         <ng-template #elseBlockMain>Главная</ng-template> 
@@ -59,16 +58,14 @@
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" 
-                                            [routerLink] = "['gallery','oblvideo']"
-                                            [queryParams]="{'lang': lang }">
+                                            [routerLink] = "['gallery','oblvideo']">
                                             <div *ngIf="isUkr; then thenBlockVideo1 else elseBlockVideo1"></div>   
                                             <ng-template #thenBlockVideo1>Відео для облради</ng-template>  
                                             <ng-template #elseBlockVideo1>Видео для облсовета</ng-template>
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" 
-                                            [routerLink] = "['gallery','privatvideo']"
-                                            [queryParams]="{'lang': lang }">
+                                            [routerLink] = "['gallery','privatvideo']">
                                             <div *ngIf="isUkr; then thenBlockVideo2 else elseBlockVideo2"></div>   
                                             <ng-template #thenBlockVideo2>Відео на замовлення</ng-template>  
                                             <ng-template #elseBlockVideo2>Видео на заказ</ng-template>
@@ -84,16 +81,14 @@
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item"
-                                            [routerLink] = "['orenda','realty']"
-                                            [queryParams]="{'lang': lang }">
+                                            [routerLink] = "['orenda','realty']">
                                             <div *ngIf="isUkr; then thenBlockRealty1 else elseBlockRealty1"></div>   
                                             <ng-template #thenBlockRealty1>Оренда приміщень</ng-template>  
                                             <ng-template #elseBlockRealty1>Аренда помещений</ng-template>
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
-                                            [routerLink] = "['orenda','vehiclerenta']"
-                                            [queryParams]="{'lang': lang }">
+                                            [routerLink] = "['orenda','vehiclerenta']">
                                             <div *ngIf="isUkr; then thenBlockRealty2 else elseBlockRealty2"></div>   
                                             <ng-template #thenBlockRealty2>Оренда автотранспорту</ng-template>  
                                             <ng-template #elseBlockRealty2>Аренда автотранспорта</ng-template>
@@ -102,8 +97,7 @@
                                 </li>
                                 <li class="nav-item" routerLinkActive = "active">
                                     <a class="nav-link" 
-                                        [routerLink] = "['aboutus']"
-                                        [queryParams]="{'lang': lang }">
+                                        [routerLink] = "['aboutus']">
                                         <div *ngIf="isUkr; then thenBlockAboutUs else elseBlockAboutUs"></div>   
                                         <ng-template #thenBlockAboutUs>Про нас</ng-template>  
                                         <ng-template #elseBlockAboutUs>O нас</ng-template>
@@ -111,8 +105,7 @@
                                 </li>
                                 <li class="nav-item" routerLinkActive = "active">
                                     <a class="nav-link" 
-                                        [routerLink] = "['contacts']"
-                                        [queryParams]="{'lang': lang }">
+                                        [routerLink] = "['contacts']">
                                         <div *ngIf="isUkr; then thenBlockContacts else elseBlockContacts"></div>   
                                         <ng-template #thenBlockContacts>Контакти</ng-template>  
                                         <ng-template #elseBlockContacts>Контакты</ng-template>

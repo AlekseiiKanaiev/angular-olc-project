@@ -7,6 +7,7 @@ import { VideoTiserComponent } from './components/video-tiser/video-tiser.compon
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { CarouselTiserComponent } from './components/carousel-tiser/carousel-tiser.component';
 import { CheckDEviceService } from '../_services/checkDevice.service';
+import { LastVideoComponent } from './components/last-video/last-video.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { CheckDEviceService } from '../_services/checkDevice.service';
     MainPageComponent,
     VideoTiserComponent,
     CarouselTiserComponent,
-    AdvantagesComponent
+    AdvantagesComponent,
+    LastVideoComponent
   ],
   providers: [CheckDEviceService]
 })

@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   private lang = 'ukr';
   private mainUser: User;
 
-  constructor(private langServ: LangSevice, private getDateServ: GetDataService, private el: ElementRef) { }
+  constructor(private langServ: LangSevice, private getDateServ: GetDataService) { }
 
   ngOnInit() {
     this.getLang();
@@ -30,9 +30,9 @@ export class HeaderComponent implements OnInit {
   }
 
   private getMainUser() {
-    this.getDateServ.getMainUser().subscribe(
-      (user) => {
-        this.mainUser = user;
+    this.getDateServ.obsMainUser.subscribe(
+      (data) => {
+        this.mainUser = data;
       }
     );
   }

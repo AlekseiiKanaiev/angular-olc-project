@@ -36,7 +36,7 @@ export class MainPageComponent implements OnInit {
     }
 
     private getVideo() {
-        this.dataServ.getVideos().subscribe(
+        this.dataServ.obsVideos.subscribe(
             (videos) => {
                 this.lastVideo = videos.pop();
                 if (this.lastVideo.video_id) { this.isVideo = true; }

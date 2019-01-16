@@ -40,5 +40,9 @@
     -webkit-transition: opacity .25s ease;
     -o-transition: opacity .25s ease;
     transition: opacity .25s ease; }
+
+/* .last-video-button .btn:focus{
+    border-color: #FF6B50;
+} */
 .last-video-button .main {
     background-color: #FF6B50; }

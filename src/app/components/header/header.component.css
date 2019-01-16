@@ -41,7 +41,7 @@
           -webkit-transition: color .25s ease;
           -o-transition: color .25s ease;
           transition: color .25s ease; }
-    .my-header .navbar-dark, .my-simple-header .navbar-dark, .my-login-header .navbar-dark {
+    .my-header .navbar-dark {
       padding: 0; }
       .my-header .navbar-dark button, .my-simple-header .navbar-dark button, .my-login-header .navbar-dark button {
         -webkit-column-rule-color: #FF6B50;
@@ -75,6 +75,9 @@
 
 h1{
     font-size: 23px;
+}
+.my-header .h-name .olc {
+  text-transform: uppercase;
 }
 .navbar-nav .nav-link{
     color: white;

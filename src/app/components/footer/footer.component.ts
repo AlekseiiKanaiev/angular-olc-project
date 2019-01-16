@@ -1,14 +1,14 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LangSevice } from 'src/app/_services/lang.service';
 import { GetDataService } from 'src/app/_services/getData.service';
 import { User } from 'src/app/_models/user.model';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class FooterComponent implements OnInit {
   private isUkr = true;
   private lang = 'ukr';
   private mainUser: User;
@@ -35,11 +35,5 @@ export class HeaderComponent implements OnInit {
         this.mainUser = data;
       }
     );
-  }
-
-  private switchLang(lang: string) {
-    if (this.lang !== lang) {
-      this.langServ.setLang(lang);
-    }
   }
 }

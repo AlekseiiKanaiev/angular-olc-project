@@ -8,4 +8,7 @@ body{
     overflow-x: hidden;
     opacity: 1;
 }
-    
+
+.hidden{
+    visibility: hidden;
+}

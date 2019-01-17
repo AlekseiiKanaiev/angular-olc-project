@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { GetDataService } from './_services/getData.service';
+import { LoaderService } from './_services/loader.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,18 @@ import { GetDataService } from './_services/getData.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  isScroll = false;
+  private isScroll = false;
+  private isPreload = false;
 
-  constructor(private dataserv: GetDataService) {}
+  subs: Subscription;
+
+  constructor(private dataServ: GetDataService, private loaderServ: LoaderService) {}
 
   ngOnInit() {
-    this.dataserv.setMainUser();
-    this.dataserv.setUsers();
-    this.dataserv.setVideos();
+    this.dataServ.setMainUser();
+    this.dataServ.setUsers();
+    this.dataServ.setVideos();
+    window.onload = () => this.loaderServ.hide();
   }
 
   @HostListener('window:scroll')

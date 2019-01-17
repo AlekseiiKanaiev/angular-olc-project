@@ -26,7 +26,7 @@ export class GetDataService {
 
     setMainUser() {
         this.getMainUser().subscribe(
-            (data) => {
+            (data: User) => {
                 this.obsMainUser.next(data);
             }
         );
@@ -34,7 +34,7 @@ export class GetDataService {
 
     setUsers() {
         this.getUsers().subscribe(
-            (data) => {
+            (data: User[]) => {
                 this.obsUsers.next(data);
             }
         );
@@ -42,7 +42,7 @@ export class GetDataService {
 
     setVideos() {
         this.getVideos().subscribe(
-            (data) => {
+            (data: Video[]) => {
                 this.obsVideos.next(data);
             }
         );

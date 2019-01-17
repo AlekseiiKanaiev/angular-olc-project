@@ -11,7 +11,7 @@ export class CarouselTeamComponent implements OnInit {
 
   @Input() private users: User[];
 
-  private myCarouselImgs: string[];
+  // private myCarouselImgs: string[];
   private myCarouselOptions = {
     items: 3,
     loop: true,
@@ -38,7 +38,6 @@ export class CarouselTeamComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.users);
-    this.myCarouselImgs = this.users.map(e => e['img_name']);
+    // this.myCarouselImgs = this.users.map(e => e['img_name']);
   }
 }

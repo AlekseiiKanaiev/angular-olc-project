@@ -1,3 +1,8 @@
-<p>
-  preloader works!
-</p>
+<div  class="preloader" [@fadeOut] = "show ? 'show': 'hide'">
+  <div class="puls"></div>
+</div>
+<!-- <div [class.hidden]="!show">
+  <div class="loader-overlay">
+    <div *ngIf="show" class="loader"></div>
+  </div>
+</div> -->

@@ -10,9 +10,9 @@
           <div class="carousel-caption">
               <div class="col-12 col-sm-8 col-md-8 utils" >
                   <h3 class="utils-header">
-                      <div *ngIf="isUkr; then thenBlockText1 else elseBlockText1"></div>   
-                      <ng-template #thenBlockText1><h2>"Замовляйте в нас послуги з професійної та високоякісної фото- та відеозйомки"</h2></ng-template>  
-                      <ng-template #elseBlockText1><h2>"Заказывайте у нас услуги профессиональной фото- и видеосъёмки"</h2></ng-template> 
+                    {{ (isUkr)? 
+                        "Замовляйте в нас послуги з професійної та високоякісної фото- та відеозйомки" : 
+                        "Заказывайте у нас услуги профессиональной фото- и видеосъёмки" }}
                   </h3>
               </div>
           </div>
@@ -22,9 +22,9 @@
           <div class="carousel-caption">
               <div class="col-12 col-sm-8 col-md-8 utils">
                   <h3 class="utils-header">
-                      <div *ngIf="isUkr; then thenBlockText2 else elseBlockText2"></div>   
-                      <ng-template #thenBlockText2><h2>"Ми надаємо послуги з оренди нерухомості та автотраспорту"</h2></ng-template>  
-                      <ng-template #elseBlockText2><h2>"Мы предоставляем услуги аренды недвижемости и автотрастпорта"</h2></ng-template> 
+                    {{ (isUkr)? 
+                        "Ми надаємо послуги з оренди нерухомості та автотраспорту" : 
+                        "Мы предоставляем услуги аренды недвижемости и автотрастпорта" }}
                   </h3>
               </div>                      
            </div>
@@ -34,9 +34,9 @@
           <div class="carousel-caption">
               <div class="col-12 col-sm-8 col-md-8 utils">
                   <h3 class="utils-header">
-                      <div *ngIf="isUkr; then thenBlockText3 else elseBlockText3"></div>   
-                      <ng-template #thenBlockText3><h2>"Ми — це команда досвідчених професіоналів"</h2></ng-template>  
-                      <ng-template #elseBlockText3><h2>"Мы — это команда опытных профессионалов"</h2></ng-template> 
+                    {{ (isUkr)? 
+                        "Ми — це команда досвідчених професіоналів" : 
+                        "Мы — это команда опытных профессионалов" }}
                   </h3>
               </div>
           </div>

@@ -44,71 +44,53 @@
                                 <li class="nav-item" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         [routerLink] = "['golovna']">
-                                        <div *ngIf="isUkr; then thenBlockMain else elseBlockMain"></div>   
-                                        <ng-template #thenBlockMain>Головна</ng-template>  
-                                        <ng-template #elseBlockMain>Главная</ng-template> 
+                                        {{ (isUkr)? "Головна" : "Главная" }}
                                     </a>
                                 </li>
                                 <li slide class="nav-item dropdown" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <div *ngIf="isUkr; then thenBlockVideo else elseBlockVideo"></div>   
-                                        <ng-template #thenBlockVideo>Відеозйомка</ng-template>  
-                                        <ng-template #elseBlockVideo>Видеосъёмка</ng-template> 
+                                        {{ (isUkr)? "Відеозйомка" : "Видеосъёмка" }}
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" 
                                             [routerLink] = "['gallery','oblvideo']">
-                                            <div *ngIf="isUkr; then thenBlockVideo1 else elseBlockVideo1"></div>   
-                                            <ng-template #thenBlockVideo1>Відео для облради</ng-template>  
-                                            <ng-template #elseBlockVideo1>Видео для облсовета</ng-template>
+                                            {{ (isUkr)? "Відео для облради" : "Видео для облсовета" }}
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" 
                                             [routerLink] = "['gallery','privatvideo']">
-                                            <div *ngIf="isUkr; then thenBlockVideo2 else elseBlockVideo2"></div>   
-                                            <ng-template #thenBlockVideo2>Відео на замовлення</ng-template>  
-                                            <ng-template #elseBlockVideo2>Видео на заказ</ng-template>
+                                            {{ (isUkr)? "Відео на замовлення" : "Видео на заказ" }}
                                         </a>
                                     </div>
                                 </li>
                                 <li slide class="nav-item dropdown" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <div *ngIf="isUkr; then thenBlockRealty else elseBlockRealty"></div>   
-                                        <ng-template #thenBlockRealty>Оренда</ng-template>  
-                                        <ng-template #elseBlockRealty>Aренда</ng-template>
+                                        {{ (isUkr)? "Оренда" : "Aренда" }}
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item"
                                             [routerLink] = "['orenda','realty']">
-                                            <div *ngIf="isUkr; then thenBlockRealty1 else elseBlockRealty1"></div>   
-                                            <ng-template #thenBlockRealty1>Оренда приміщень</ng-template>  
-                                            <ng-template #elseBlockRealty1>Аренда помещений</ng-template>
+                                            {{ (isUkr)? "Оренда приміщень" : "Aренда помещений" }}
                                         </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
                                             [routerLink] = "['orenda','vehiclerenta']">
-                                            <div *ngIf="isUkr; then thenBlockRealty2 else elseBlockRealty2"></div>   
-                                            <ng-template #thenBlockRealty2>Оренда автотранспорту</ng-template>  
-                                            <ng-template #elseBlockRealty2>Аренда автотранспорта</ng-template>
+                                            {{ (isUkr)? "Оренда автотранспорту" : "Aренда автотранспорта" }}
                                         </a>
                                     </div>
                                 </li>
                                 <li class="nav-item" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         [routerLink] = "['aboutus']">
-                                        <div *ngIf="isUkr; then thenBlockAboutUs else elseBlockAboutUs"></div>   
-                                        <ng-template #thenBlockAboutUs>Про нас</ng-template>  
-                                        <ng-template #elseBlockAboutUs>O нас</ng-template>
+                                        {{ (isUkr)? "Про нас" : "O нас" }}
                                     </a>
                                 </li>
                                 <li class="nav-item" routerLinkActive = "active">
                                     <a class="nav-link" 
                                         [routerLink] = "['contacts']">
-                                        <div *ngIf="isUkr; then thenBlockContacts else elseBlockContacts"></div>   
-                                        <ng-template #thenBlockContacts>Контакти</ng-template>  
-                                        <ng-template #elseBlockContacts>Контакты</ng-template>
+                                        {{ (isUkr)? "Контакти" : "Контакты" }}
                                     </a>
                                 </li> 
                               </ul>

@@ -2,13 +2,7 @@
     <div class="row">
         <div class="col advantage-header">
             <h2>
-              <div *ngIf="isUkr; then thenBlockHeader else elseBlockHeader"></div>   
-              <ng-template #thenBlockHeader>
-                  наші пріоритети
-              </ng-template>  
-              <ng-template #elseBlockHeader>
-                  наши приоритеты
-              </ng-template>
+              {{ (isUkr)? "наші пріоритети" : "наши приоритеты" }}
             </h2>
         </div>
     </div>

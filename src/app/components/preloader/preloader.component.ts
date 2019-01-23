@@ -16,6 +16,7 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
     ])
   ]
 })
+
 export class PreloaderComponent implements OnInit {
   show = true;
 
@@ -29,5 +30,4 @@ export class PreloaderComponent implements OnInit {
       }
     );
   }
-
 }

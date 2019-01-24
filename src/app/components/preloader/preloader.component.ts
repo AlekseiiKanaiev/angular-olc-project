@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LoaderService } from 'src/app/_services/loader.service';
 import { trigger, state, transition, animate, style } from '@angular/animations';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-preloader',
@@ -17,17 +18,21 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
   ]
 })
 
-export class PreloaderComponent implements OnInit {
+export class PreloaderComponent implements OnInit, OnDestroy {
   show = true;
+  private subs: Subscription;
 
   constructor(private loaderServ: LoaderService) { }
 
   ngOnInit() {
-    this.loaderServ.loaderState.subscribe(
+    this.subs = this.loaderServ.loaderState.subscribe(
       // tslint:disable-next-line:no-shadowed-variable
       (state: boolean) => {
         this.show = state;
       }
     );
+  }
+  ngOnDestroy() {
+    this.subs.unsubscribe();
   }
 }

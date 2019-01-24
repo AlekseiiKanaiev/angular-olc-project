@@ -3,12 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { User } from '../_models/user.model';
 import { Video } from '../_models/video.model';
+import actions from '../_store/actions';
+import store from '../_store/store';
+
+const {SETMAINUSER, SETUSERS, SETVIDEOS} = actions;
 
 @Injectable()
 export class GetDataService {
     obsMainUser: Subject<User> = new Subject<User>();
     obsUsers: Subject<User[]> = new Subject<User[]>();
     obsVideos: Subject<Video[]> = new Subject<Video[]>();
+
+    // mainUser = this.obsMainUser.asObservable();
+    // videos = this.obsVideos.asObservable();
 
     constructor (private http: HttpClient) {}
 
@@ -28,6 +35,7 @@ export class GetDataService {
         this.getMainUser().subscribe(
             (data: User) => {
                 this.obsMainUser.next(data);
+                store.dispatch({type: SETMAINUSER, data: data});
             }
         );
     }
@@ -36,6 +44,7 @@ export class GetDataService {
         this.getUsers().subscribe(
             (data: User[]) => {
                 this.obsUsers.next(data);
+                store.dispatch({type: SETUSERS, data: data});
             }
         );
     }
@@ -44,6 +53,7 @@ export class GetDataService {
         this.getVideos().subscribe(
             (data: Video[]) => {
                 this.obsVideos.next(data);
+                store.dispatch({type: SETVIDEOS, data: data});
             }
         );
     }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OwlModule } from 'ngx-owl-carousel';
+// import { PaginationModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,6 +23,7 @@ import { PreloaderComponent } from './components/preloader/preloader.component';
 import { LoaderService } from './_services/loader.service';
 // import { LoaderInterceptorService } from './_services/loaderInterceptor.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { LoaderService } from './_services/loader.service';
   imports: [
     BrowserModule,
     OwlModule,
+    // PaginationModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
     AppRouterModule,

@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   constructor(private dataServ: GetDataService, private loaderServ: LoaderService) {}
 
   ngOnInit() {
+    console.log('init app');
     this.dataServ.setMainUser();
     this.dataServ.setUsers();
     this.dataServ.setVideos();

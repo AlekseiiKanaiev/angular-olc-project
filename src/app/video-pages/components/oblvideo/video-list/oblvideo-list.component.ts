@@ -3,17 +3,17 @@ import { Video } from 'src/app/_models/video.model';
 import { PageChangedEvent } from 'ngx-bootstrap';
 
 @Component({
-  selector: 'app-video-list',
-  templateUrl: './video-list.component.html',
-  styleUrls: ['./video-list.component.css']
+  selector: 'app-oblvideo-list',
+  templateUrl: './oblvideo-list.component.html',
+  styleUrls: ['./oblvideo-list.component.css']
 })
-export class VideoListComponent implements OnInit {
+export class OblVideoListComponent implements OnInit {
   @Input() private videos: Video[];
 
   private curVideos: Video[];
   private totalItems: number;
   private itemsPerPage = 3;
-  rotate = true;
+  private maxSize = 5;
 
   constructor() { }
 

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="intro-header">
                 <h2>
-                    {{ (isUkr)? "Відео для Харківської обл ради" 
+                    {{ (isUkr)? "Відео для Харківської облради" 
                     : "Видео для харьковского облсовета" }}
                 </h2>
             </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="container-fluid oblvideo-list" *ngIf="isVideo">
-        <app-video-list [videos] = "videos"></app-video-list>
+        <app-oblvideo-list [videos] = "videos"></app-oblvideo-list>
     </div>
     <!-- {% if pages.items %}
         <div class="container-fluid oblvideo-list">

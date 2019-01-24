@@ -21,4 +21,5 @@
 
 .page-item.active .page-link {
     background-color: #FF6B50;
+    color: black;
 }

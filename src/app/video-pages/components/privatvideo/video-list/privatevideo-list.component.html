@@ -1,0 +1,11 @@
+<div class="row d-flex justify-content-center" *ngFor="let video of curVideos">
+  <app-privatevideo-item [video] = "video"></app-privatevideo-item>
+</div>
+<pagination [totalItems]="totalItems" 
+  (pageChanged)="pageChanged($event)"
+  [boundaryLinks]="true" [rotate]="false" 
+  [maxSize] = "maxSize" [itemsPerPage]="itemsPerPage"
+  previousText="&lsaquo;" nextText="&rsaquo;" 
+  firstText="&laquo;" lastText="&raquo;"
+  class="pagination justify-content-center">
+</pagination>

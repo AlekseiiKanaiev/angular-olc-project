@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginationModule } from 'ngx-bootstrap';
 import { VideoPagesRouterModule, videoPagesRoutingComponents } from './video-pages.router.module';
-import { VideoItemComponent } from './components/oblvideo/video-list/video-item/video-item.component';
-import { VideoListComponent } from './components/oblvideo/video-list/video-list.component';
+import { OblVideoItemComponent } from './components/oblvideo/video-list/video-item/oblvideo-item.component';
+import { OblVideoListComponent } from './components/oblvideo/video-list/oblvideo-list.component';
+import { PrivateVideoListComponent } from './components/privatvideo/video-list/privatevideo-list.component';
+import { PrivateVideoItemComponent } from './components/privatvideo/video-list/video-item/privatevideo-item.component';
 
 @NgModule({
   imports: [
@@ -13,8 +15,10 @@ import { VideoListComponent } from './components/oblvideo/video-list/video-list.
   ],
   declarations: [
     videoPagesRoutingComponents,
-    VideoListComponent,
-    VideoItemComponent
+    OblVideoListComponent,
+    OblVideoItemComponent,
+    PrivateVideoListComponent,
+    PrivateVideoItemComponent
   ],
   exports: [
     // PaginationModule

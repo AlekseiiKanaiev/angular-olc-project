@@ -1,3 +1,59 @@
-<p>
-  privatvideo works!
-</p>
+<div class="section privatvideo">
+  <div class="container intro">
+      <div class="row">
+          <div class="intro-header">
+              <h2>
+                  {{ (isUkr)? "Відео для для приватних клієнтів" 
+                  : "Видео для частных клиентов" }}
+              </h2>
+          </div>
+          <div class="intro-body">
+              <div *ngIf="isUkr; then thenBlockText else elseBlockText"></div>   
+              <ng-template #thenBlockText>
+                  <p>
+                      Ми пропонуємо якісну фото- та відео зйомку з будь-якого приводу. 
+                      Ми відкриті для співпраці з приватними особами, підприємствами, 
+                      установами та закладами.
+                  </p>
+                  <ul>
+                      Що ми пропонуємо:
+                      <li>зйомка офіційних та неофіційних заходів (весілля, вечірка, випускний та будь-які інші приводи);</li>
+                      <li>ведення онлайн-репортажів;</li>
+                      <li>запис інтрев’ю;</li>
+                      <li>рекламні ролики.</li>
+                  </ul>
+              </ng-template>  
+              <ng-template #elseBlockText>
+                  <p>
+                      Мы предлагаем качественную фото- и видеосъемку по любому поводу. 
+                      Мы открыты для сотрудничества с частными лицами, предприятиями и учреждениями.
+                  </p>
+                  <ul>
+                      Что мы предлагаем:
+                      <li>съемка официальных и не официальных мероприятий (свадьбы, вечеринка, выпускной и любые другие);</li>
+                      <li>ведение онлайн-репортажей;</li>
+                      <li>запись интервью;</li>
+                      <li>рекламные ролики.</li>
+                  </ul>
+              </ng-template>
+          </div>
+          <div class="intro-button d-flex justify-content-center">
+              <a class="nav-link" [routerLink] = "['/contacts']" 
+                class="btn btn-primary btn-md" role="button" 
+                aria-pressed="true">
+                {{ (isUkr)? "Замовити відеозйомку" 
+                  : "Заказать видеосъёмку" }}
+              </a>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid privatvideo-list" *ngIf="isVideo">
+      <div class="privatvideo-list-header">
+          <h2>
+              {{ (isUkr)? "Приклади наших робіт, щоб переконатися в їхній якості!" 
+              : "Примеры наших работ для демонстрации их качества" }}
+          </h2>
+      </div>
+      <app-privatevideo-list [videos] = "videos"></app-privatevideo-list>
+  </div>
+</div>

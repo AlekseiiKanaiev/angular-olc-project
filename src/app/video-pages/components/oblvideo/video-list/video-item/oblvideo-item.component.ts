@@ -3,11 +3,11 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Video } from 'src/app/_models/video.model';
 
 @Component({
-  selector: 'app-video-item',
-  templateUrl: './video-item.component.html',
-  styleUrls: ['./video-item.component.css']
+  selector: 'app-oblvideo-item',
+  templateUrl: './oblvideo-item.component.html',
+  styleUrls: ['./oblvideo-item.component.css']
 })
-export class VideoItemComponent implements OnInit {
+export class OblVideoItemComponent implements OnInit {
   @Input() private video: Video;
 
   private safeUrl: SafeResourceUrl;

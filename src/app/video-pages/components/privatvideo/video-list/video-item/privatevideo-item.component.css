@@ -1,0 +1,13 @@
+.oblvideo-list-video, .privatvideo-list-video, .orendamest-list-video, .orendatrans-list-video {
+    margin-top: 20px; }
+.oblvideo-list-video iframe, .privatvideo-list-video iframe, .orendamest-list-video iframe, .orendatrans-list-video iframe {
+    background-image: url(../../../../../../assets/img/loader.gif);
+    -webkit-background-size: 50px 50px;
+            background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center; }
+.oblvideo-list .title, .privatvideo-list .title, .orendamest-list .title, .orendatrans-list .title {
+    font-weight: 300;
+    letter-spacing: 3px;
+    padding-right: 10px;
+    padding-left: 10px; }

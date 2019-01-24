@@ -1,14 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Video } from 'src/app/_models/video.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Video } from 'src/app/_models/video.model';
 
 @Component({
-  selector: 'app-last-video',
-  templateUrl: './last-video.component.html',
-  styleUrls: ['./last-video.component.css']
+  selector: 'app-oblvideo-item',
+  templateUrl: './oblvideo-item.component.html',
+  styleUrls: ['./oblvideo-item.component.css']
 })
-export class LastVideoComponent implements OnInit {
-  @Input() private isUkr: boolean;
+export class OblVideoItemComponent implements OnInit {
   @Input() private video: Video;
 
   private safeUrl: SafeResourceUrl;
@@ -16,7 +15,7 @@ export class LastVideoComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    console.log(this.video);
     this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`http://www.youtube.com/embed/${this.video.video_id}`);
   }
+
 }

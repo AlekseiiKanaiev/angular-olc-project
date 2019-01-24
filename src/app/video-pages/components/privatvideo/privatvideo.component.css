@@ -1,0 +1,44 @@
+.privatvideo .container, .privatvideo .container-fluid {
+    padding: 20px; 
+    text-align: center;
+}
+  
+.privatvideo .intro .row, .orendamest .intro .row, .orendatrans .intro .row {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.privatvideo .intro-header, .orendamest .intro-header, .orendatrans .intro-header {
+  width: 100%; }
+
+.privatvideo .intro-body, .orendamest .intro-body, .orendatrans .intro-body {
+  width: 100%; }
+
+.privatvideo .adr, .orendamest .adr, .orendatrans .adr {
+  white-space: nowrap; }
+  .oblvideo-list, .privatvideo-list, .orendamest-list, .orendatrans-list {
+    background-color: #aaaaaa; 
+}
+.privatvideo .intro ul, .orendamest .intro ul, .orendatrans .intro ul {
+    text-align: left;
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-bottom: 10px; }
+  
+.privatvideo .intro-button, .orendamest .intro-button, .orendatrans .intro-button {
+    margin: auto; }
+.privatvideo .intro-button .btn, .orendamest .intro-button .btn, .orendatrans .intro-button .btn {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    background-color: #FF6B50;
+    opacity: 0.9;
+    border: none;
+    -webkit-border-radius: 10px;
+            border-radius: 10px; }
+.privatvideo .intro-button .btn:hover, .orendamest .intro-button .btn:hover, .orendatrans .intro-button .btn:hover {
+    opacity: 1;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease; }

@@ -1,0 +1,9 @@
+const SETMAINUSER = 'SETMAINUSER';
+const SETUSERS = 'SETUSERS';
+const SETVIDEOS = 'SETVIDEOS';
+
+export default {
+    SETMAINUSER,
+    SETUSERS,
+    SETVIDEOS
+};

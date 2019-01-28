@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
     this.dataServ.setMainUser();
     this.dataServ.setUsers();
     this.dataServ.setVideos();
+    this.dataServ.setServices();
     window.onload = () => this.loaderServ.hide();
   }
 

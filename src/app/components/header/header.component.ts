@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { LangSevice } from 'src/app/_services/lang.service';
 import { GetDataService } from 'src/app/_services/getData.service';
 import { User } from 'src/app/_models/user.model';
+import { faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,7 @@ export class HeaderComponent implements OnInit {
   private isUkr = true;
   private lang = 'ukr';
   private mainUser: User;
+  private mobileIcon = faMobileAlt;
 
   constructor(private langServ: LangSevice, private getDataServ: GetDataService) { }
 

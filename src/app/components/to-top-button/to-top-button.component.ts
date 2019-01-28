@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LangSevice } from 'src/app/_services/lang.service';
+import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-to-top-button',
@@ -9,6 +10,7 @@ import { LangSevice } from 'src/app/_services/lang.service';
 export class ToTopButtonComponent implements OnInit {
   private isUkr = true;
   private lang = 'ukr';
+  private toTopIcon = faAngleDoubleUp;
 
   constructor(private langServ: LangSevice) { }
 

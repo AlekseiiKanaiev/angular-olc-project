@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/_models/user.model';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-carousel-team',
@@ -11,17 +13,20 @@ export class CarouselTeamComponent implements OnInit {
 
   @Input() private users: User[];
 
-  // private myCarouselImgs: string[];
+  private userIcon = faUser;
+  private angleLeft = faAngleLeft;
+  private angleRight = faAngleRight;
+
   private myCarouselOptions = {
     items: 3,
     loop: true,
-    nav: false,
+    nav: true,
     dots: false,
     smartSpeed: 700,
-    navText: [
-      '<i class="fas fa-angle-left"></i>',
-      '<i class="fas fa-angle-right"></i>'
-    ],
+    // navText: [
+    //   `<fa-icon [icon]= "${faAngleLeft}"></fa-icon>`,
+    //   `<fa-icon [icon]= "${faAngleRight}"></fa-icon>`
+    // ],
     responsiveClass: true,
     responsive: {
         0: {
@@ -38,6 +43,5 @@ export class CarouselTeamComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    // this.myCarouselImgs = this.users.map(e => e['img_name']);
   }
 }

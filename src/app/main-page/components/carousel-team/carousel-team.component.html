@@ -6,16 +6,16 @@
         <div class="team-carousel" id = "team-carousel">
             <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']">
                 <div *ngFor="let user of users" class="team-carousel-item item">
-                    <figure class="item-img">
+                    <div class="item-img">
                         <div *ngIf="user.img_name; then thenBlock else elseBlock"></div>   
                         <ng-template #thenBlock>
                             <img *ngIf="user.img_name" class="team-img" src="../../../../assets/img/users/{{ user.img_name }}"
                             alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'">
                         </ng-template>  
                         <ng-template #elseBlock>
-                            <i class="far fa-user"></i>
+                            <fa-icon [icon]="userIcon"></fa-icon>
                         </ng-template>
-                    </figure>
+                    </div>
                     <div class="info">
                         <div *ngIf="isUkr; then thenBlockText else elseBlockText"></div>   
                         <ng-template #thenBlockText>

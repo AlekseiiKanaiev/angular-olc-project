@@ -1,11 +1,11 @@
 <div *ngIf="isUkr; then thenBlockText else elseBlockText"></div>   
 <ng-template #thenBlockText>
   <div class="to-top" title = "Нагору" (click) = "toTop()">
-      <i class="fas fa-angle-double-up"></i>
+        <fa-icon [icon]="toTopIcon"></fa-icon>
   </div>
 </ng-template>  
 <ng-template #elseBlockText>
     <div class="to-top" title = "Наверх" (click) = "toTop()">
-        <i class="fas fa-angle-double-up"></i>
+        <fa-icon [icon]="toTopIcon"></fa-icon>
     </div>
 </ng-template>

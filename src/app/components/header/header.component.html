@@ -100,8 +100,8 @@
               </div>   
               <div class="col-md-2 right">
                   <div class="h-phone d-none d-md-block">
-                      <i class="fas fa-mobile-alt"></i>
-                      {{ (mainUser)? mainUser.phone : 9999999 }}
+                    <fa-icon [icon]="mobileIcon" class="fa-mobile-alt"></fa-icon>
+                    {{ (mainUser)? mainUser.phone : 9999999 }}
                   </div>
                   <app-switch-lang (onClick) = "switchLang($event)" [isUkr] = "isUkr"></app-switch-lang>
               </div>

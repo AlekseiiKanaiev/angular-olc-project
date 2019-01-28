@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OwlModule } from 'ngx-owl-carousel';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { PaginationModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -37,6 +38,7 @@ import { LoaderService } from './_services/loader.service';
   imports: [
     BrowserModule,
     OwlModule,
+    FontAwesomeModule,
     // PaginationModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,

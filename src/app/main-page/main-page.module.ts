@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainPageRouterModule } from './main-page.router.module';
 import { OwlModule } from 'ngx-owl-carousel';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MainPageComponent } from './components/main-page.component';
 import { VideoTiserComponent } from './components/video-tiser/video-tiser.component';
@@ -15,7 +16,8 @@ import { CarouselTeamComponent } from './components/carousel-team/carousel-team.
   imports: [
     CommonModule,
     MainPageRouterModule,
-    OwlModule
+    OwlModule,
+    FontAwesomeModule
   ],
   declarations: [
     MainPageComponent,

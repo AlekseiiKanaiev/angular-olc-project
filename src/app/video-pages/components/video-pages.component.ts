@@ -1,29 +1,32 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Video } from 'src/app/_models/video.model';
-import store from 'src/app/_store/store';
 import { LangSevice } from 'src/app/_services/lang.service';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import store from 'src/app/_store/store';
 
 @Component({
-  selector: 'app-privatvideo',
-  templateUrl: './privatvideo.component.html',
-  styleUrls: ['./privatvideo.component.css']
+  selector: 'app-video-pages',
+  templateUrl: './video-pages.component.html',
+  styleUrls: ['./video-pages.component.css']
 })
-export class PrivatvideoComponent implements OnInit, OnDestroy {
+export class VideoPagesComponent implements OnInit, OnDestroy {
   private videos: Video[];
   private isVideo = false;
   private isUkr = true;
   private lang = 'ukr';
+  private videoTag: string;
+  private isObl = false;
 
   constructor(private langServ: LangSevice, private router: Router) { }
 
   ngOnInit() {
+    this.videoTag = this.router.url.split('/').pop();
     this.getLang();
     this.getVideo();
-    this.filterVideo();
-    console.log(this.router.url.split('/').pop());
+    this.filterVideo(this.videoTag);
+    if (this.videoTag === 'oblvideo') {
+      this.isObl = true;
+    }
   }
 
   private getLang() {
@@ -40,14 +43,14 @@ export class PrivatvideoComponent implements OnInit, OnDestroy {
     store.subscribe(
       () => {
         this.videos = store.getState().videos;
-        this.filterVideo();
+        this.filterVideo(this.videoTag);
       }
     );
   }
 
-  private filterVideo() {
+  private filterVideo(tag: string) {
     if (this.videos) {
-      this.videos = this.videos.filter(el => el.tag === 'privatvideo');
+      this.videos = this.videos.filter(el => el.tag === tag);
       this.isVideo = true;
     }
   }

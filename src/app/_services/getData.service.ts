@@ -3,17 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { User } from '../_models/user.model';
 import { Video } from '../_models/video.model';
+import { Service } from '../_models/service.model';
 import actions from '../_store/actions';
 import store from '../_store/store';
 
-const {SETMAINUSER, SETUSERS, SETVIDEOS} = actions;
+const {SETMAINUSER, SETUSERS, SETVIDEOS, SETSERVICES} = actions;
 
 @Injectable()
 export class GetDataService {
     obsMainUser: Subject<User> = new Subject<User>();
     obsUsers: Subject<User[]> = new Subject<User[]>();
     obsVideos: Subject<Video[]> = new Subject<Video[]>();
-
+    obsServices: Subject<Service[]> = new Subject<Service[]>();
     // mainUser = this.obsMainUser.asObservable();
     // videos = this.obsVideos.asObservable();
 
@@ -29,6 +30,10 @@ export class GetDataService {
 
     private getVideos(): Observable<Video[]> {
         return this.http.get<Video[]>(`http://127.0.0.1:5000/getVideos`);
+    }
+
+    private getServices(): Observable<Service[]> {
+        return this.http.get<Service[]>(`http://127.0.0.1:5000/getServices`);
     }
 
     setMainUser() {
@@ -54,6 +59,15 @@ export class GetDataService {
             (data: Video[]) => {
                 this.obsVideos.next(data);
                 store.dispatch({type: SETVIDEOS, data: data});
+            }
+        );
+    }
+
+    setServices() {
+        this.getServices().subscribe(
+            (data: Service[]) => {
+                this.obsServices.next(data);
+                store.dispatch({type: SETSERVICES, data: data});
             }
         );
     }

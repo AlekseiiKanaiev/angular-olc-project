@@ -1,9 +1,13 @@
 .team {
   background-color: white;
-  padding-top: 30px; }
+  padding-top: 30px; 
+}
 .team-header {
-  margin-bottom: 20px; }
-  
+  margin-bottom: 20px; 
+}
+.team-carousel {
+  width: 100%;
+}  
 .team-carousel .owl-nav {
   position: absolute;
   width: 100%;
@@ -12,14 +16,18 @@
   position: absolute;
   font-size: 26px;
   width: 50px;
-  height: 50px; }
+  height: 50px; 
+}
 .team-carousel .owl-nav button:focus {
-  outline-color: white; }
-.team-carousel .owl-nav button:hover {
+  outline-color: white; 
+}
+.team-carousel .owl-theme .owl-nav [class*=owl-]:hover {
+  background-color: transparent;
   color: #FF6B50;
-  -webkit-transition: color 0.25s ease;
-  -o-transition: color 0.25s ease;
-  transition: color 0.25s ease; }
+  -webkit-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  transition: color 0.15s ease; 
+}
 .owl-nav .owl-prev {
   left: 0px; }
 .owl-nav .owl-next {

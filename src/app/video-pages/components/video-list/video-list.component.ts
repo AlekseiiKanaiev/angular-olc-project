@@ -3,11 +3,11 @@ import { Video } from 'src/app/_models/video.model';
 import { PageChangedEvent } from 'ngx-bootstrap';
 
 @Component({
-  selector: 'app-oblvideo-list',
-  templateUrl: './oblvideo-list.component.html',
-  styleUrls: ['./oblvideo-list.component.css']
+  selector: 'app-video-list',
+  templateUrl: './video-list.component.html',
+  styleUrls: ['./video-list.component.css']
 })
-export class OblVideoListComponent implements OnInit {
+export class VideoListComponent implements OnInit {
   @Input() private videos: Video[];
 
   private curVideos: Video[];
@@ -18,7 +18,7 @@ export class OblVideoListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.videos = this.videos.reverse().filter(el => el.tag === 'oblvideo');
+    this.videos = this.videos.reverse();
     this.totalItems = this.videos.length;
     this.curVideos = this.videos.slice(0, this.itemsPerPage);
   }
@@ -28,4 +28,5 @@ export class OblVideoListComponent implements OnInit {
     const end = event.page * this.itemsPerPage;
     this.curVideos = this.videos.slice(start, end);
   }
+
 }

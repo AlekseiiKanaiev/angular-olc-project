@@ -1,0 +1,16 @@
+.video-item {
+    margin-top: 20px; 
+}
+.video-item iframe {
+    background-image: url(../../../../../assets/img/loader.gif);
+    -webkit-background-size: 50px 50px;
+        background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.video-item .title {
+    font-weight: 300;
+    letter-spacing: 3px;
+    padding-right: 10px;
+    padding-left: 10px; 
+}

@@ -15,13 +15,12 @@ export class OblvideoComponent implements OnInit {
   private videos: Video[];
   private isVideo = false;
 
-  constructor(private langServ: LangSevice, private dataServ: GetDataService) { }
+  constructor(private langServ: LangSevice) { }
 
   ngOnInit() {
-    this.videos = store.getState().videos;
     this.getLang();
     this.getVideo();
-    if (this.videos) { this.isVideo = true; }
+    this.filterVideo();
   }
 
   private getLang() {
@@ -34,11 +33,18 @@ export class OblvideoComponent implements OnInit {
   }
 
   private getVideo() {
+    this.videos = store.getState().videos;
     store.subscribe(
       () => {
         this.videos = store.getState().videos;
-        if (this.videos) { this.isVideo = true; }
+        this.filterVideo();
       }
     );
+  }
+  private filterVideo() {
+    if (this.videos) {
+      this.videos = this.videos.filter(el => el.tag === 'oblvideo');
+      this.isVideo = true;
+    }
   }
 }

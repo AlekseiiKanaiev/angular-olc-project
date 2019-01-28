@@ -1,6 +1,6 @@
 <div class="row d-flex justify-content-center"
     *ngFor="let video of curVideos">
-  <app-oblvideo-item [video] = "video"></app-oblvideo-item>
+  <app-video-item [video] = "video"></app-video-item>
 </div>
 <pagination [totalItems]="totalItems" 
   (pageChanged)="pageChanged($event)"

@@ -1,0 +1,20 @@
+.intro-button{
+    margin: auto;
+    margin-bottom: 20px;
+}
+.intro-button .btn {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    background-color: #FF6B50;
+    opacity: 0.9;
+    border: none;
+    -webkit-border-radius: 10px;
+            border-radius: 10px; 
+        }
+.intro-button .btn:hover {
+    opacity: 1;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease; 
+}

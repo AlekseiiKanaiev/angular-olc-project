@@ -38,9 +38,8 @@
               </ng-template>
           </div>
           <div class="intro-button d-flex justify-content-center">
-              <a class="nav-link" [routerLink] = "['/contacts']" 
-                class="btn btn-primary btn-md" role="button" 
-                aria-pressed="true">
+              <a class="nav-link btn btn-primary btn-md" role="button" 
+              [routerLink] = "['/contacts']" aria-pressed="true">
                 {{ (isUkr)? "Замовити відеозйомку" 
                   : "Заказать видеосъёмку" }}
               </a>

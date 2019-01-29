@@ -20,13 +20,15 @@
                 </h5>
                 <div class="foot-info" >
                     <div class="foot foot-addr">
-                      <i class="fas fa-location-arrow"></i>
+                        <fa-icon [icon]="locationIcon" class="icon"></fa-icon>
+                      <!-- <i class="fas fa-location-arrow"></i> -->
                       {{ (isUkr)? 
                         "м.Харків, майдан Свободи, 5 (Держпром)" : 
                         "г.Харьков, пл.Свободы, 5 (Госпром)" }}
                     </div>
                     <div class="foot foot-phone">
-                      <i class="fas fa-mobile-alt"></i>
+                        <fa-icon [icon]="mobileIcon" class="icon"></fa-icon>
+                      <!-- <i class="fas fa-mobile-alt"></i> -->
                       {{ (mainUser)? mainUser.phone : 9999999 }}
                     </div>
                 </div>

@@ -1,3 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/video-pages/components/video-list/video-list.component.css";
-@import "./app/main-page/components/carousel-team/carousel-team.component.css"
+@import "./app/main-page/components/carousel-team/carousel-team.component.css";
+/* @import "./app/main-page/components/carousel-team/carousel-team.component.css"; */
+

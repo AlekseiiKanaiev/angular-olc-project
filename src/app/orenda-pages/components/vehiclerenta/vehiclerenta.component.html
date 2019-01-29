@@ -1,3 +1,76 @@
-<p>
-  vehiclerenta works!
-</p>
+<div class="section orendatrans">
+  <div class="container intro">
+      <div class="row">
+          <div class="intro-header">
+              <h2>
+                  {{ (isUkr)? "Оренда автотранспорту" 
+                  : "Аренда автотранспорта" }}
+              </h2>
+          </div>
+          <div class="intro-body">
+              <div *ngIf="isUkr; then thenBlockTextBody else elseBlockTextBody">
+              </div>   
+              <ng-template #thenBlockTextBody>
+                  <p>
+                      Ми пропонуємо взяти в довгострокову оренду мікроавтобус RENAULT TRAFIC 
+                      для фізичної або юридичної особи.
+                      <br/> При цьому офіційно буде укладено договір оренди.
+                  </p>
+              </ng-template>  
+              <ng-template #elseBlockTextBody>
+                  <p>
+                      Мы предлагаем взять в долгосрочную аренду микроавтобус RENAULT TRAFIC 
+                      для физического или юридического лица.
+                      <br/> При этом официально будет составлен договор аренды.
+                  </p>
+              </ng-template>
+          </div>
+          <app-orenda-button class="intro-button" [isUkr] = "isUkr"></app-orenda-button>
+      </div>
+  </div>
+  <div class="container-fluid orendatrans-photo">
+      <div class="row">
+          <div class="col-md-5">
+              <div *ngIf="isUkr; then thenBlockTextPhoto else elseBlockTextPhoto">
+              </div>   
+              <ng-template #thenBlockTextPhoto>
+                <h4>Відповіді на найчастіші питання про мікроавтобус RENAULT TRAFIC:</h4>
+                <p>
+                  <ul>
+                    <li>вміщує 8 пасажирів;</li>
+                    <li>водію потрібні права категорії “В”;</li>
+                    <li>працює на дизельному палеві;</li>
+                    <li>пробіг – приблизно 300 тис. км.;</li>
+                    <li>рік випуску – 1993;</li>
+                    <li>бездоганний робочий стан.</li>
+                  </ul>
+                <!-- </p> -->
+              </ng-template>  
+              <ng-template #elseBlockTextPhoto>
+                <h4>Ответы на частозадаваемые вопросы по поводу микроавтобуса RENAULT TRAFIC:</h4>
+                <p>
+                  <ul>
+                    <li>вмещает 8 пассажиров;</li>
+                    <li>водителю достаточно прав категории “В”;</li>
+                    <li>работает на дизельном топливе;</li>
+                    <li>пробег - приблизельно 300 тыс.км.;</li>
+                    <li>год выпуска – 1993;</li>
+                    <li>рабочее состояние.</li>
+                  </ul>
+                <!-- </p> -->
+              </ng-template>
+          </div>
+          <div class="col-md-7">
+            <ngx-gallery *ngIf="show" class="photo-gallery"
+            [options]="galleryOptions" [images]="galleryImages" ></ngx-gallery>
+              <!-- <div class="orendamest-gallery fotorama" data-nav="thumbs"
+                  data-thumbwidth="110" data-thumbheights="60" 
+                  data-thumbborderwidth="5" data-thumbmargin="10" data-width="100%">
+                  {% for photo in photos %}
+                      <img src="../static/img/photos/small/transport/{{ photo.img_name }}" alt="Фото аренды транспорта" width="640" height="480">
+                  {% endfor %}
+              </div> -->
+          </div>
+      </div>
+  </div>
+</div>

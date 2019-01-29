@@ -23,7 +23,6 @@ export class PrivatvideoComponent implements OnInit, OnDestroy {
     this.getLang();
     this.getVideo();
     this.filterVideo();
-    console.log(this.router.url.split('/').pop());
   }
 
   private getLang() {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LangSevice } from 'src/app/_services/lang.service';
 import { GetDataService } from 'src/app/_services/getData.service';
 import { User } from 'src/app/_models/user.model';
+import { faMobileAlt, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -12,6 +13,8 @@ export class FooterComponent implements OnInit {
   private isUkr = true;
   private lang = 'ukr';
   private mainUser: User;
+  private mobileIcon = faMobileAlt;
+  private locationIcon = faLocationArrow;
 
   constructor(private langServ: LangSevice, private getDataServ: GetDataService) { }
 

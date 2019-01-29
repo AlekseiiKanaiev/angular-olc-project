@@ -14,10 +14,12 @@
   top: 0px; }
 .team-carousel .owl-nav button {
   position: absolute;
-  font-size: 26px;
+  
   width: 50px;
   height: 50px; 
 }
+
+
 .team-carousel .owl-nav button:focus {
   outline-color: white; 
 }
@@ -28,6 +30,11 @@
   -o-transition: color 0.15s ease;
   transition: color 0.15s ease; 
 }
+.team-carousel .owl-nav button span {
+  font-size: 26px;
+  font-weight: bold;
+}
+
 .owl-nav .owl-prev {
   left: 0px; }
 .owl-nav .owl-next {
@@ -47,6 +54,8 @@
   font-weight: 300;
   margin-bottom: 30px; }
 .team-carousel .team-carousel-item .item-img {
+  width: 80px;
+  height: 80px;
   display: block;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
@@ -56,5 +65,8 @@
   height: 80px;
   -webkit-border-radius: 10em;
           border-radius: 10em; }
-.team-carousel .team-carousel-item i {
-  font-size: 80px; }
+.team-carousel .team-carousel-item fa-icon {
+  font-size: 70px; 
+  display: block;
+  margin-top: -10px;
+}

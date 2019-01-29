@@ -61,8 +61,9 @@
               </ng-template>
           </div>
           <div class="col-md-7">
-            <ngx-gallery *ngIf="show" class="photo-gallery"
-            [options]="galleryOptions" [images]="galleryImages" ></ngx-gallery>
+            <!-- <ngx-gallery *ngIf="show" class="photo-gallery"
+            [options]="galleryOptions" [images]="galleryImages" ></ngx-gallery> -->
+            <app-photo-gallery [orendaType] = "orendaType"></app-photo-gallery>
               <!-- <div class="orendamest-gallery fotorama" data-nav="thumbs"
                   data-thumbwidth="110" data-thumbheights="60" 
                   data-thumbborderwidth="5" data-thumbmargin="10" data-width="100%">

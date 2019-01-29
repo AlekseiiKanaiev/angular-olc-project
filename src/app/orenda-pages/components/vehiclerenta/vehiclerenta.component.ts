@@ -11,45 +11,47 @@ import { LoaderService } from 'src/app/_services/loader.service';
   templateUrl: './vehiclerenta.component.html',
   styleUrls: ['./vehiclerenta.component.css']
 })
-export class VehiclerentaComponent implements OnInit, OnDestroy {
+export class VehiclerentaComponent implements OnInit {
   private lang = 'ukr';
   private isUkr = true;
-  private services: Service[];
-  private vehiclePhoto: string[];
+  private orendaType = 'photo-transport';
 
-  private galleryOptions: NgxGalleryOptions[];
-  private galleryImages: NgxGalleryImage[] = [];
+  // private services: Service[];
+  // private vehiclePhoto: string[];
 
-  private show = false;
-  private subs: Subscription;
+  // private galleryOptions: NgxGalleryOptions[];
+  // private galleryImages: NgxGalleryImage[] = [];
 
-  constructor(private langServ: LangSevice, private loaderServ: LoaderService) { }
+  // private show = false;
+  // private subs: Subscription;
+
+  constructor(private langServ: LangSevice) { }
 
   ngOnInit() {
     this.getLang();
-    this.getServices();
-    this.filterServices();
-    this.galleryOptions = [
-      {
-        width: '100%',
-        height: '600px',
-        thumbnailsColumns: 4,
-        imageAnimation: NgxGalleryAnimation.Slide,
-        imageInfinityMove: true,
-        imageSwipe: true,
-        imagePercent: 100,
-        thumbnailsSwipe: true,
-        thumbnailsPercent: 20,
-        thumbnailSize: NgxGalleryImageSize.Contain,
-        preview: false
-      }
-    ];
-    this.subs = this.loaderServ.loaderState.subscribe(
-      // tslint:disable-next-line:no-shadowed-variable
-      (state: boolean) => {
-        this.show = !state;
-      }
-    );
+    // this.getServices();
+    // this.filterServices();
+    // this.galleryOptions = [
+    //   {
+    //     width: '100%',
+    //     height: '600px',
+    //     thumbnailsColumns: 4,
+    //     imageAnimation: NgxGalleryAnimation.Slide,
+    //     imageInfinityMove: true,
+    //     imageSwipe: true,
+    //     imagePercent: 75,
+    //     thumbnailsSwipe: true,
+    //     thumbnailsPercent: 20,
+    //     thumbnailSize: NgxGalleryImageSize.Contain,
+    //     preview: false
+    //   }
+    // ];
+    // this.subs = this.loaderServ.loaderState.subscribe(
+    //   // tslint:disable-next-line:no-shadowed-variable
+    //   (state: boolean) => {
+    //     this.show = !state;
+    //   }
+    // );
   }
 
   private getLang() {
@@ -61,41 +63,40 @@ export class VehiclerentaComponent implements OnInit, OnDestroy {
     );
   }
 
-  private getServices() {
-    this.services = store.getState().services;
-    store.subscribe(
-      () => {
-        this.services = store.getState().services;
-        this.filterServices();
-      }
-    );
-  }
+  // private getServices() {
+  //   this.services = store.getState().services;
+  //   store.subscribe(
+  //     () => {
+  //       this.services = store.getState().services;
+  //       this.filterServices();
+  //     }
+  //   );
+  // }
 
-  private filterServices() {
-    if (this.services) {
-      this.vehiclePhoto = this.services.filter(el => el.type === 'photo-transport')
-                                      .map(el => el['img_name']);
-    }
-    this.setGalleryImages();
-  }
+  // private filterServices() {
+  //   if (this.services) {
+  //     this.vehiclePhoto = this.services.filter(el => el.type === 'photo-transport')
+  //                                     .map(el => el['img_name']);
+  //   }
+  //   this.setGalleryImages();
+  // }
 
-  private setGalleryImages() {
-    if (this.vehiclePhoto) {
-      console.log(this.vehiclePhoto);
-      // tslint:disable-next-line:forin
-      for (const image of this.vehiclePhoto) {
-        this.galleryImages.push(
-          {
-            small: `assets/img/gallery/transport/${image}`,
-            medium: `assets/img/gallery/transport/${image}`,
-            big: `assets/img/gallery/transport/${image}`
-          });
-      }
-      console.log(this.galleryImages);
-    }
-  }
+  // private setGalleryImages() {
+  //   if (this.vehiclePhoto) {
+  //     // tslint:disable-next-line:forin
+  //     for (const image of this.vehiclePhoto) {
+  //       this.galleryImages.push(
+  //         {
+  //           small: `assets/img/gallery/transport/${image}`,
+  //           medium: `assets/img/gallery/transport/${image}`,
+  //           big: `assets/img/gallery/transport/${image}`
+  //         });
+  //     }
+  //     console.log(this.galleryImages);
+  //   }
+  // }
 
-  ngOnDestroy() {
-    this.subs.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.subs.unsubscribe();
+  // }
 }

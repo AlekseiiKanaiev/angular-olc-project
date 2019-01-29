@@ -25,7 +25,7 @@
                   </p>
               </ng-template>
           </div>
-          <app-orenda-button [isUkr] = "isUkr"></app-orenda-button>
+          <app-orenda-button class="intro-button" [isUkr] = "isUkr"></app-orenda-button>
       </div>
   </div>
   <div class="container-fluid orendatrans-photo">
@@ -61,6 +61,8 @@
               </ng-template>
           </div>
           <div class="col-md-7">
+            <ngx-gallery *ngIf="show" class="photo-gallery"
+            [options]="galleryOptions" [images]="galleryImages" ></ngx-gallery>
               <!-- <div class="orendamest-gallery fotorama" data-nav="thumbs"
                   data-thumbwidth="110" data-thumbheights="60" 
                   data-thumbborderwidth="5" data-thumbmargin="10" data-width="100%">

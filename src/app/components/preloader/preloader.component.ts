@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
 })
 
 export class PreloaderComponent implements OnInit, OnDestroy {
-  show = true;
+  private show = true;
   private subs: Subscription;
 
   constructor(private loaderServ: LoaderService) { }

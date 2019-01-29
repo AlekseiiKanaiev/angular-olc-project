@@ -1,5 +1,6 @@
 <div class="intro-button d-flex justify-content-center">
-    <a href="/contacts" class="btn btn-primary btn-md" role="button" aria-pressed="true">
+    <a class="btn btn-primary btn-md" role="button" aria-pressed="true"
+    [routerLink] = "['/contacts']">
       {{ (isUkr)? "Замовити оренду" 
                 : "Заказать арнеду" }}  
     </a>

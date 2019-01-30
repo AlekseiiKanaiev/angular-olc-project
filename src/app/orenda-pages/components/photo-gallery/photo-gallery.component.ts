@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ElementRef, Renderer2 } from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation, NgxGalleryImageSize } from 'ngx-gallery';
 import { Subscription } from 'rxjs';
 import { LoaderService } from 'src/app/_services/loader.service';
@@ -14,7 +14,7 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
   @Input() private orendaType: string;
 
   private services: Service[];
-  private vehiclePhoto: string[];
+  private photos: string[];
 
   private galleryOptions: NgxGalleryOptions[];
   private galleryImages: NgxGalleryImage[] = [];
@@ -22,26 +22,11 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
   private show = false;
   private subs: Subscription;
 
-  constructor(private loaderServ: LoaderService) { }
+  constructor(private loaderServ: LoaderService, private element: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
     this.getServices();
     this.filterServices(this.orendaType);
-    this.galleryOptions = [
-      {
-        width: '100%',
-        height: '600px',
-        thumbnailsColumns: 4,
-        imageAnimation: NgxGalleryAnimation.Slide,
-        imageInfinityMove: true,
-        imageSwipe: true,
-        imagePercent: 75,
-        thumbnailsSwipe: true,
-        thumbnailsPercent: 20,
-        thumbnailSize: NgxGalleryImageSize.Contain,
-        preview: false
-      }
-    ];
     this.subs = this.loaderServ.loaderState.subscribe(
       // tslint:disable-next-line:no-shadowed-variable
       (state: boolean) => {
@@ -62,21 +47,38 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
 
   private filterServices(type: string) {
     if (this.services) {
-      this.vehiclePhoto = this.services.filter(el => el.type === type)
+      this.photos = this.services.filter(el => el.type === type)
                                       .map(el => el['img_name']);
     }
-    this.setGalleryImages();
+    this.setGallery(type);
   }
 
-  private setGalleryImages() {
-    if (this.vehiclePhoto) {
-      // tslint:disable-next-line:forin
-      for (const image of this.vehiclePhoto) {
+  private setGallery (type: string) {
+    if (this.photos) {
+      this.galleryOptions = [
+        {
+          width: '100%',
+          height: '600px',
+          thumbnailsColumns: (this.photos.length <= 5) ? this.photos.length : 5,
+          imageAnimation: NgxGalleryAnimation.Slide,
+          imageInfinityMove: true,
+          imageSwipe: true,
+          imagePercent: 85,
+          imageArrows: false,
+          thumbnailsSwipe: true,
+          thumbnailsPercent: 15,
+          thumbnailSize: NgxGalleryImageSize.Cover,
+          // thumbnailsMargin: -95,
+          thumbnailsArrows: false,
+          preview: false
+        }
+      ];
+      for (const photo of this.photos) {
         this.galleryImages.push(
           {
-            small: `assets/img/gallery/transport/${image}`,
-            medium: `assets/img/gallery/transport/${image}`,
-            big: `assets/img/gallery/transport/${image}`
+            small: `assets/img/gallery/${type}/${photo}`,
+            medium: `assets/img/gallery/${type}/${photo}`,
+            big: `assets/img/gallery/${type}/${photo}`
           });
       }
     }

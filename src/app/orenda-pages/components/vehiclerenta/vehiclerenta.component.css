@@ -11,27 +11,23 @@
 .intro-header{
     text-transform: uppercase;
 }
-.orendatrans-photo{
+.vehiclerenta-photo{
     background-color: #aaaaaa;
     margin-top: 15px;
 }
-.orendatrans-photo .row{
+.vehiclerenta-photo .row{
     margin-bottom: 0px;
     padding-bottom: 20px;
     padding-top: 20px; 
 }
-.orendatrans-photo h4{
+.vehiclerenta-photo h4{
     margin: auto;
     text-align: center;
 }
-.orendatrans-photo ul {
+.vehiclerenta-photo ul {
     text-align: left;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin: auto; 
-}
-.photo-gallery{
-    cursor: pointer;
-    width: 100%;
 }

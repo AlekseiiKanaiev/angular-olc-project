@@ -1,4 +1,4 @@
-<div class="section orendatrans">
+<div class="section vehiclerenta">
   <div class="container intro">
       <div class="row">
           <div class="intro-header">
@@ -28,7 +28,7 @@
           <app-orenda-button class="intro-button" [isUkr] = "isUkr"></app-orenda-button>
       </div>
   </div>
-  <div class="container-fluid orendatrans-photo">
+  <div class="container-fluid vehiclerenta-photo">
       <div class="row">
           <div class="col-md-5">
               <div *ngIf="isUkr; then thenBlockTextPhoto else elseBlockTextPhoto">
@@ -61,15 +61,7 @@
               </ng-template>
           </div>
           <div class="col-md-7">
-            <ngx-gallery *ngIf="show" class="photo-gallery"
-            [options]="galleryOptions" [images]="galleryImages" ></ngx-gallery>
-              <!-- <div class="orendamest-gallery fotorama" data-nav="thumbs"
-                  data-thumbwidth="110" data-thumbheights="60" 
-                  data-thumbborderwidth="5" data-thumbmargin="10" data-width="100%">
-                  {% for photo in photos %}
-                      <img src="../static/img/photos/small/transport/{{ photo.img_name }}" alt="Фото аренды транспорта" width="640" height="480">
-                  {% endfor %}
-              </div> -->
+            <app-photo-gallery [orendaType] = "orendaType"></app-photo-gallery>
           </div>
       </div>
   </div>

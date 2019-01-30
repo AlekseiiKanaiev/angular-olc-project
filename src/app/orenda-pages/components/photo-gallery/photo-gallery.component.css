@@ -1,0 +1,23 @@
+.ngx-gallery-image{
+    cursor: pointer;
+}
+
+/* li:first-child:nth-last-child(3),
+li:first-child:nth-last-child(3) ~ ul {
+  width: 33.3333%;
+} */
+
+ngx-gallery >>> ngx-gallery-thumbnails {
+    width: 80%;
+    margin: auto;
+    
+}
+.ngx-gallery-thumbnail {
+    border: 3px solid white;
+    -webkit-transition: border-color 0.5s ease;
+    -o-transition: border-color 0.5s ease;
+    transition: border-color 0.5s ease;
+}
+.ngx-gallery-thumbnail.ngx-gallery-active{
+    border: 3px solid #FF6B50;
+}

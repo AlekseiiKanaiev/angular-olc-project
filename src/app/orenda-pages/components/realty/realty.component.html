@@ -1,3 +1,58 @@
-<p>
-  realty works!
-</p>
+<div class="section realty">
+  <div class="container intro">
+      <div class="row">
+          <div class="intro-header">
+              <h2>
+                  {{ (isUkr)? "Оренда нерухомості" 
+                  : "Аренда недвижемости" }}
+              </h2>
+          </div>
+          <div class="intro-body">
+              <div *ngIf="isUkr; then thenBlockTextBody else elseBlockTextBody">
+              </div>   
+              <ng-template #thenBlockTextBody>
+                  <p>
+                      Ми надаємо послуги зі здачі приміщень в оренду.
+                      <br/> На балансі нашого підприємства перебуває об’єкт за адресою:
+                      <span class="adr">м. Харків, вул. Героїв Праці, 47-Б.</span>
+                  </p>
+              </ng-template>  
+              <ng-template #elseBlockTextBody>
+                  <p>
+                      Мы предоставляем услуги по сдече помещений в арнеду.
+                      <br/> На балансе нашего предприятия находится объект по адресу: 
+                      <span class="adr">г. Харьков, ул. Героев Труда, 47-Б.</span>
+                  </p>
+              </ng-template>
+          </div>
+          <app-orenda-button class="intro-button" [isUkr] = "isUkr"></app-orenda-button>
+      </div>
+  </div>
+  <div class="container-fluid realty-photo">
+      <div class="row">
+          <div class="col-md-5">
+            <div *ngIf="isUkr; then thenBlockTextBody else elseBlockTextBody">
+            </div>   
+            <ng-template #thenBlockTextBody>
+                <h4>м. Харків, вул. Героїв Праці, 47-Б</h4>
+                <p>
+                  Mайно було передано на баланс КП ХОР "ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР" від ТОВ 
+                  «Дитяча аптека №302» на підставі розпорядження голови Харківської обласної ради 
+                  №162 від 24 листопада 2015 року. Наразі знаходиться в оренді.
+                </p>
+            </ng-template>  
+            <ng-template #elseBlockTextBody>
+                <h4>г. Харьков, ул. Героев Труда, 47-Б</h4>
+                <p>
+                  Имущество было предано на баланс КП ХОС "ОБЛАСТНОЙ ЛОГИСТИЧЕСКИЙ ЦЕНТР" от 
+                  ЗАО "Детская аптека №302" на основании распоряжения председателя Харьковского обастного совета
+                  №162 от 24 ноября 2015 года. В данный момент находиться в аренде.
+                </p>
+            </ng-template>
+          </div>
+          <div class="col-md-7">
+              <app-photo-gallery [orendaType] = "orendaType"></app-photo-gallery>
+          </div>
+      </div>
+  </div>
+</div>

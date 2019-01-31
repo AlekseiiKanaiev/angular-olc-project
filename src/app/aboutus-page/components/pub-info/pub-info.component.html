@@ -1,0 +1,50 @@
+<div class="aboutus-button">
+  <button class="btn btn-secondary btn-sm" 
+    [@fadeOut] = "isPressed ? 'hide' : 'show'"
+    (click) = "onClick()">
+    {{ (isUkr)? "Публічна інформація" : "Публичная информация" }}
+  </button>
+</div>
+<div class="container aboutus-pubinfo" 
+  [@infoList] = "isPressed ? 'show' : 'hide'">
+  <div class="row">
+      <div class="aboutus-pubinfo-header">
+          <h2>
+            {{ (isUkr)? "Публічна інформація" : "Публичная информация" }}
+          </h2>
+      </div>
+  </div>
+  <div class="row">
+    <div class="aboutus-pubinfo-content">
+        <p>
+          {{ (isUkr)? 
+            "Bи можете ознайомитися з документами, які регулюють нашу діяльність:" : 
+            "Вы можете ознакомиться с документами, которые регламентируют нашу деятельность:" 
+          }}
+        </p>
+        <app-pub-info-list [services] = "services"></app-pub-info-list>
+        <!-- <ul class="pubinfo-list" *ngIf="services">
+          <li *ngFor="let item of services" (click)="openModal(template)">
+            <a class="popup-link">{{ item.name_ukr }}</a>
+            <ng-template #template>
+              <div class="modal-header">
+                <h6 class="modal-title pull-left">{{ item.name_ukr }}</h6>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="assets/img/pub-info/{{item.img_name}}" 
+                  alt="{{ item.name_ukr }}" width="100%">
+              </div>
+            </ng-template>
+          </li>
+        </ul> -->
+    </div>
+  </div>
+  <div class="row">
+      <div class="aboutus-pubinfo-close" (click) = "onClick()">
+          <fa-icon [icon]="xIcon"></fa-icon>
+      </div>
+  </div>
+</div>

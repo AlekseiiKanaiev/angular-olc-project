@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/_models/user.model';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import store from 'src/app/_store/store';
 
 @Component({
   selector: 'app-carousel-team',
@@ -9,9 +10,9 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./carousel-team.component.css']
 })
 export class CarouselTeamComponent implements OnInit {
-  @Input() private isUkr: boolean;
+  @Input() private isUkr = true;
 
-  @Input() private users: User[];
+  private users: User[];
 
   private userIcon = faUser;
   private angleLeft = faAngleLeft;
@@ -43,5 +44,16 @@ export class CarouselTeamComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    this.getUsers();
   }
+
+  private getUsers() {
+    this.users = store.getState().users;
+    store.subscribe(
+        () => {
+            this.users = store.getState().users;
+        }
+    );
+}
+
 }

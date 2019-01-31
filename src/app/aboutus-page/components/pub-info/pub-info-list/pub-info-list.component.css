@@ -1,0 +1,21 @@
+ul {
+    text-align: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto; 
+}
+ul li a {
+    cursor: pointer;
+    color: #FF6B50;
+    opacity: 0.9; 
+}
+ul li a:hover {
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease;
+    -o-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease; 
+}
+ul li img {
+    width: 100%;
+}

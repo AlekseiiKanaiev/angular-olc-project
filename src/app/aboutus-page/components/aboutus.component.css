@@ -1,0 +1,23 @@
+.aboutus .container {
+    padding: 20px; }
+  
+.aboutus-intro-header {
+    margin: auto; }
+  
+.aboutus-intro-info {
+    width: 100%; }
+.aboutus-intro-info ul {
+    text-align: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto; }
+  
+.aboutus-hist-header {
+    margin: auto; }
+  
+.aboutus-team-header {
+    margin: auto;
+    margin-bottom: 20px; }
+  
+

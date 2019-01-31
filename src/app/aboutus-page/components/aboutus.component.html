@@ -92,41 +92,4 @@
       </div>
   </div>
   <app-carousel-team [isUkr] = 'isUkr'></app-carousel-team>
-  <!-- <div class="aboutus-button">
-      <button class="btn btn-secondary btn-sm">
-          {{"Публічна інформація" if lang == "ukr" else "Публичная информация"}}
-      </button>
-  </div>
-  <div class="container aboutus-pubinfo">
-      <div class="row">
-          <div class="aboutus-pubinfo-header">
-              <h2>{{"Публічна інформація" if lang == "ukr" else "Публичная информация"}}</h2>
-          </div>
-      </div>
-      <div class="row">
-          <div class="aboutus-pubinfo-content">
-              <p>
-                  {{"Bи можете ознайомитися з документами, які регулюють нашу діяльність:"
-                  if lang == "ukr" else 
-                  "Вы можете ознакомиться с документами, которые регламентируют нашу деятельность:"}}
-              </p>
-              {% if pubinfo %}
-              <ul class="list">
-                  {% for item in pubinfo %}
-                  <li>
-                      <a class="popup-link" href="../static/img/photos/pubinfo/{{ item.img_name }}">
-                          {{ item.name_ukr }}
-                      </a>
-                  </li>
-                  {% endfor %}
-              </ul>
-              {% endif %}
-          </div>
-      </div>
-      <div class="row">
-          <div class="aboutus-pubinfo-close">
-              <i class="fas fa-times-circle"></i>
-          </div>
-      </div>
-  </div>
-</div> -->
+  <app-pub-info [isUkr] = 'isUkr'></app-pub-info>

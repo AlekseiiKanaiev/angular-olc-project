@@ -22,7 +22,7 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
   private show = false;
   private subs: Subscription;
 
-  constructor(private loaderServ: LoaderService, private element: ElementRef, private renderer: Renderer2) { }
+  constructor(private loaderServ: LoaderService) { }
 
   ngOnInit() {
     this.getServices();

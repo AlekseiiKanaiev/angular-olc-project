@@ -1,10 +1,10 @@
-<div class="container-fluid team ">
+<div class="container-fluid team" *ngIf="users">
     <div class="row team-header d-flex justify-content-center">
         <h2>Наша команда</h2>
     </div>
     <div class="row">
-        <div class="team-carousel" id = "team-carousel">
-            <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']">
+        <!-- <div class="team-carousel" id = "team-carousel"> -->
+            <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding', 'row']" class="team-carousel">
                 <div *ngFor="let user of users" class="team-carousel-item item">
                     <div class="item-img">
                         <div *ngIf="user.img_name; then thenBlock else elseBlock"></div>   
@@ -31,6 +31,6 @@
                     </div>
                 </div>
             </owl-carousel>
-        </div>
+        <!-- </div> -->
     </div>
 </div>

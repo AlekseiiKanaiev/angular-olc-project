@@ -45,26 +45,29 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-flow: column;
       -ms-flex-flow: column;
           flex-flow: column;
   text-align: center;
   font-weight: 300;
-  margin-bottom: 30px; }
+  margin-bottom: 30px; 
+}
 .team-carousel .team-carousel-item .item-img {
   width: 80px;
   height: 80px;
   display: block;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-          align-self: center; }
+          align-self: center; 
+}
 .team-carousel .team-carousel-item .item-img img {
   width: 80px;
   height: 80px;
   -webkit-border-radius: 10em;
-          border-radius: 10em; }
+          border-radius: 10em; 
+}
 .team-carousel .team-carousel-item fa-icon {
   font-size: 70px; 
   display: block;

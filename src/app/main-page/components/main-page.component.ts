@@ -17,7 +17,6 @@ export class MainPageComponent implements OnInit {
     private videos: Video[];
     private lastVideo: Video;
     private isVideo = false;
-    private users: User[];
 
     constructor (private langServ: LangSevice,
                 private chdev: CheckDEviceService) {}
@@ -26,7 +25,6 @@ export class MainPageComponent implements OnInit {
         console.log('init main page');
         this.getLang();
         this.getVideo();
-        this.getUsers();
         this.isNotMob = (!this.chdev.checkDeviceMobile() && !this.chdev.checkDeviceTablet());
         this.popVideo();
     }
@@ -46,15 +44,6 @@ export class MainPageComponent implements OnInit {
             () => {
                 this.videos = store.getState().videos;
                 this.popVideo();
-            }
-        );
-    }
-
-    private getUsers() {
-        this.users = store.getState().users;
-        store.subscribe(
-            () => {
-                this.users = store.getState().users;
             }
         );
     }

@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/_models/user.model';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { LangSevice } from 'src/app/_services/lang.service';
+import store from 'src/app/_store/store';
 
 @Component({
   selector: 'app-carousel-team',
@@ -9,9 +11,10 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./carousel-team.component.css']
 })
 export class CarouselTeamComponent implements OnInit {
-  @Input() private isUkr: boolean;
+  // private lang = 'ukr';
+  @Input() private isUkr = true;
 
-  @Input() private users: User[];
+  private users: User[];
 
   private userIcon = faUser;
   private angleLeft = faAngleLeft;
@@ -40,8 +43,29 @@ export class CarouselTeamComponent implements OnInit {
     }
   };
 
-  constructor() {}
+  constructor(private langServ: LangSevice) {}
 
   ngOnInit() {
+    // this.getLang();
+    this.getUsers();
   }
+
+  // private getLang() {
+  //   this.langServ.obsLang.subscribe(
+  //     () => {
+  //       this.lang = this.langServ.obsLang.getValue();
+  //       this.isUkr = (this.lang === 'ukr');
+  //     }
+  //   );
+  // }
+
+  private getUsers() {
+    this.users = store.getState().users;
+    store.subscribe(
+        () => {
+            this.users = store.getState().users;
+        }
+    );
+}
+
 }

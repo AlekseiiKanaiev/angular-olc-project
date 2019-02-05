@@ -1,0 +1,69 @@
+.contacts {
+    background-color: #aaaaaa; }
+    .contacts-main {
+      background-color: #fff; }
+      .contacts-main .row {
+        padding-left: 15px;
+        padding-right: 15px; }
+      .contacts-main-header {
+        width: 100%;
+        padding-top: 20px; }
+      .contacts-main-intro {
+        width: 100%; }
+      .contacts-main-person {
+        width: 100%;
+        padding-bottom: 20px; }
+        .contacts-main-person-img, .contacts-main-person-info {
+          margin: 10px; }
+          .contacts-main-person-img img, .contacts-main-person-info img {
+            width: 80px;
+            height: 80px;
+            -webkit-border-radius: 10em;
+                    border-radius: 10em; }
+    .contacts-mail {
+      padding: 20px 40px; }
+      .contacts-mail-intro {
+        width: 100%; }
+      .contacts-mail-success {
+        z-index: 10;
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        color: #FF6B50;
+        text-transform: uppercase; }
+        .contacts-mail-success span {
+          margin: auto; }
+        .contacts-mail-success ~ * {
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+        .contacts-mail-success.active ~ * {
+          opacity: 0.5;
+          -webkit-filter: blur(10px);
+                  filter: blur(10px); }
+      .contacts-mail-form {
+        width: 100%; }
+        .contacts-mail-form label {
+          margin-bottom: 0px; }
+        .contacts-mail-form-msg textarea {
+          text-align: left;
+          height: 120px;
+          resize: none; }
+        .contacts-mail-form input:focus, .contacts-mail-form select:focus, .contacts-mail-form textarea:focus, .contacts-mail-form button:focus {
+          border-color: #FF6B50;
+          -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7);
+                  box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7); }
+        .contacts-mail-form button {
+          background-color: #FF6B50;
+          opacity: 0.8;
+          border: none; }
+          .contacts-mail-form button:hover {
+            background-color: #FF6B50;
+            border: none;
+            opacity: 1;
+            -webkit-transition: opacity 0.25s ease;
+            -o-transition: opacity 0.25s ease;
+            transition: opacity 0.25s ease; }

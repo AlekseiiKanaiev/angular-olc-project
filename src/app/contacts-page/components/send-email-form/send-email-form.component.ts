@@ -39,7 +39,7 @@ export class SendEmailFormComponent implements OnInit {
                       Validators.required,
                     ]
                   ),
-    'form_msg':  new FormControl(''),
+    'form_msg':  new FormControl('')
   });
 
   constructor(private getDataServ: GetDataService) { }
@@ -67,15 +67,18 @@ export class SendEmailFormComponent implements OnInit {
   }
 
   submit() {
-    this.getDataServ.sendEmail(this.emailForm.value, this.lang).subscribe(
+    this.getDataServ.sendEmail(this.emailForm.value).subscribe(
       (data: AlertModel) => {
         console.log(data);
         this.alert = data;
       },
       (err) => {
         console.log(err);
-        this.alert.msg = (this.isUkr) ? 'Помилка сервера' : 'Ошибка сервера';
-        this.alert.type = 'danger';
+        this.alert = {
+          msg_ukr: 'Помилка сервера',
+          msg_rus: 'Ошибка сервера',
+          type: 'danger'
+        };
       }
     );
   }

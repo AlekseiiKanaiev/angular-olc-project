@@ -40,9 +40,8 @@ export class GetDataService {
         return this.http.get<Service[]>(`${this.API_URL}/getServices`);
     }
 
-    sendEmail(emailData: EmailData, lang: string): Observable<AlertModel|any> {
-        const data = {emailData: emailData, lang: lang};
-        return this.http.post(`${this.API_URL}/sendemail`, data);
+    sendEmail(emailData: EmailData): Observable<AlertModel|any> {
+        return this.http.post(`${this.API_URL}/sendemail`, emailData);
     }
 
     setMainUser() {

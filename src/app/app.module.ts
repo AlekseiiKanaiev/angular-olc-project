@@ -7,11 +7,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { PaginationModule } from 'ngx-bootstrap';
 
 import { AppRouterModule } from './app.router.module';
-import { MainPageModule } from './main-page/main-page.module';
-import { VideoPagesModule } from './video-pages/video-pages.module';
-import { OrendaPagesModule } from './orenda-pages/orenda-pages.module';
-import { AboutusPageModule } from './aboutus-page/aboutus-page.module';
-import { ContactsPageModule } from './contacts-page/contacts-page.module';
+import { MainPageModule } from './main-page-module/main-page.module';
+import { VideoPagesModule } from './video-pages-module/video-pages.module';
+import { OrendaPagesModule } from './orenda-pages-module/orenda-pages.module';
+import { AboutusPageModule } from './aboutus-page-module/aboutus-page.module';
+import { ContactsPageModule } from './contacts-page-module/contacts-page.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';

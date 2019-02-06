@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainPageRouterModule } from './main-page.router.module';
 
-import { CarouselTeamModule } from '../carousel-team/carousel-team.module';
+import { CarouselTeamModule } from '../carousel-team-module/carousel-team.module';
 
 import { MainPageComponent } from './components/main-page.component';
 import { VideoTiserComponent } from './components/video-tiser/video-tiser.component';

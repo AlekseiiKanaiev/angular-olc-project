@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./app/video-pages/components/video-list/video-list.component.css";
-@import "./app/carousel-team/components/carousel-team/carousel-team.component.css";
+@import "./app/video-pages-module/components/video-list/video-list.component.css";
+@import "./app/carousel-team-module/components/carousel-team/carousel-team.component.css";
 /* @import "./app/main-page/components/carousel-team/carousel-team.component.css"; */
-@import "./app/orenda-pages/components/photo-gallery/photo-gallery.component.css";
-@import "./app//contacts-page//components/send-email-form/send-email-form.component.css";
+@import "./app/orenda-pages-module/components/photo-gallery/photo-gallery.component.css";
+@import "./app/contacts-page-module/components/send-email-form/send-email-form.component.css";

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselTeamModule } from '../carousel-team/carousel-team.module';
+import { CarouselTeamModule } from '../carousel-team-module/carousel-team.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ModalModule } from 'ngx-bootstrap';
 

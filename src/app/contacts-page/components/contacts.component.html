@@ -1,3 +1,53 @@
-<p>
-  contacts works!
-</p>
+<div class="section contacts">
+  <div class="container-fluid contacts-main">
+      <div class="row">
+        <div class="contacts-main-header">
+          <h1>
+              {{ (isUkr)? "Як з нами зв'язатись?" : "Как с нами связаться?" }}
+          </h1>
+        </div>
+        <div class="contacts-main-intro">
+          <div *ngIf="isUkr; then thenBlockText else elseBlockText"></div>   
+          <ng-template #thenBlockText>
+            <p>КП ХОР <span class="olc">"ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР"</span> знаходиться за адресою: <br/>м.Харків, майдан Свободи, 5 (Держпром)</p>
+            <p>Ви можете просто зателефонувати нам:</p>
+          </ng-template>  
+          <ng-template #elseBlockText>
+            <p>КП ХОC <span class="olc">"Областной логистический центр"</span> находится по адресу: <br/>г.Харьков, пл.Свободы, 5 (Госпром)</p>
+            <p>Вы можете просто позвонить нам:</p>
+          </ng-template>
+        </div>
+      </div>
+      <div class="row" *ngIf="user">
+        <div class="contacts-main-person d-flex justify-content-center">
+          <figure class="contacts-main-person-img">
+            <div *ngIf="user.img_name; then thenBlock else elseBlock"></div>   
+            <ng-template #thenBlock>
+              <img *ngIf="user.img_name" class="team-img" src="../../../../assets/img/users/{{ user.img_name }}"
+              alt="КП ХОР 'ОБЛАСНИЙ ЛОГІСТИЧНИЙ ЦЕНТР'">
+            </ng-template>  
+            <ng-template #elseBlock>
+              <fa-icon [icon]="userIcon"></fa-icon>
+            </ng-template>
+          </figure>
+          <div class="contacts-main-person-info">
+            <div *ngIf="isUkr; then thenBlockInfo else elseBlockInfo"></div>   
+            <ng-template #thenBlockInfo>
+              {{ (user.pos_ukr)? user.pos_ukr : ""}}
+              <br>
+              {{ (user.f_name_ukr)? user.f_name_ukr : ""}}
+            </ng-template>  
+            <ng-template #elseBlockInfo>
+              {{ (user.pos_rus)? user.pos_rus : ""}}
+              <br>
+              {{ (user.f_name_rus)? user.f_name_rus : ""}}
+            </ng-template>
+            <br>
+            <fa-icon [icon]="mobileIcon" class="fa-mobile-alt"></fa-icon>
+            {{ (user)? user.phone : 9999999 }}
+          </div>
+        </div>
+      </div>
+  </div>
+  <app-send-email-form [isUkr] = "isUkr" [lang] = "lang"></app-send-email-form>
+</div>

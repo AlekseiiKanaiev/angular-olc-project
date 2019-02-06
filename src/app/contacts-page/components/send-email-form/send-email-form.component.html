@@ -1,0 +1,144 @@
+<div class="container contacts-mail">
+    <div class="contacts-mail-intro">
+    {{ (isUkr)? "Або ви можете залишити ваше повідомлення через форму зворотного зв’язку:" : 
+    "Или вы можете оставить ваше сообщение через форму обратной связи:" }}
+    </div>
+    <alert *ngIf="alert" [type] = 'alert.type'>
+        {{ (isUkr)? alert.msg_ukr : alert.msg_rus }}
+    </alert>
+    <form [formGroup]="emailForm" novalidate (ngSubmit)="submit()"
+        class="contacts-mail-form justify-content-center">
+        <div class="form-row align-items-start">
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>{{ (isUkr)? "П.І.Б." : "Ф.И.О." }}</label>
+                    <input class="form-control" name="name" formControlName="name" 
+                        placeholder="{{ (isUkr)? 'Як до вас звертатись?' : 'Как к вам обращаться?' }} "/>
+                    <alert class = 'invalid-field' type = 'danger' *ngIf="emailForm.controls['name'].invalid && emailForm.controls['name'].touched">
+                        {{ (isUkr)? "Не вказано ім'я" : 
+                        "Не указано имя" }}
+                    </alert>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" name="email" formControlName="email"
+                        placeholder="{{ (isUkr)? 'Ваша електрона пошта?' : 'Ваша электронная почта?' }}" />
+                    <alert class = 'invalid-field' type = "danger" *ngIf="emailForm.controls['email'].invalid && emailForm.controls['email'].touched">
+                        {{ (isUkr)? "Некорректний email" : 
+                        "Некорректный email" }}
+                    </alert>
+                </div>
+                <div class="form-group">
+                    <label>
+                        {{ (isUkr)? "Номер телефону" : "Номер телефона" }}
+                    </label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">+38</div>
+                        </div>
+                        <input class="form-control" name="phone" formControlName="phone"
+                            placeholder="{{ (isUkr)? 'Ваш номер телефону?' : 'Ваш номер телефона?' }} " />
+                        <alert class = 'invalid-field' type = "danger" *ngIf="emailForm.controls['phone'].invalid && emailForm.controls['phone'].touched">
+                            {{ (isUkr)? "Некорректний номер телефону" : 
+                            "Некорректный номер телефона" }}
+                        </alert>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>
+                        {{ (isUkr)? "Вид послуги" : "Вид услуги" }}
+                    </label>
+                    <select type="text" class="form-control" name = "select" formControlName="select">
+                        <option selected disabled value="">
+                            {{ (isUkr)? "Виберіть послугу" : "Выбeрите услугу" }}
+                        </option>
+                        <option *ngFor="let item of services" value="{{ (isUkr)? item.name_ukr : item.name_rus }}">
+                            {{ (isUkr)? item.name_ukr : item.name_rus }}  
+                        </option>
+                    </select>
+                    <alert class = 'invalid-field' type = "danger" *ngIf="emailForm.controls['select'].invalid && emailForm.controls['select'].touched">
+                        {{ (isUkr)? "Не обрана послуга" : 
+                        "Не выбрана услуга" }}
+                    </alert>
+                </div>
+                <div class="form-group align-self-stretch">
+                    <label>
+                        {{ (isUkr)? "Повідомлення" : "Сообщение" }}
+                    </label>
+                    <textarea type="text" class="form-control" name = "form_msg" formControlName="form_msg"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <button class="btn btn-default" [disabled]="emailForm.invalid">
+                    Отправить
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- <form action="/contacts" method="post" class="contacts-mail-form d-flex justify-content-center">
+  <div class="contacts-mail-success">
+      <span><h2>{{ "Дякуємо за заказ" if lang == "ukr" else "Спасибо за заказ" }}</h2></span> 
+  </div>
+  <div class="form-row align-items-center">
+<div class="col-md-6 col-sm-12">
+  <div class="form-group contacts-mail-form-name">
+      <label for="inputName">
+        {{ (isUkr)? "П.І.Б." : "Ф.И.О." }}
+      </label>
+      <input required type="text" class="form-control" id = "inputName" name = "inputName" 
+      placeholder="{{ (isUkr)? 'Як до вас звертатись?' : 'Как к вам обращаться?' }} ">
+      <div class="invalid-feedback">
+          Please choose a username.
+      </div>
+  </div>
+  <div class="form-group contacts-mail-form-email">
+      <label for="inputEmail">E-mail</label>
+      <input required type="email" class="form-control" id = "inputEmail" name = "inputEmail" 
+      placeholder="{{ (isUkr)? 'Ваша електрона пошта?' : 'Ваша электронная почта?' }}">
+  </div>
+  <div class="form-group contacts-mail-form-phone">
+      <label for="inputPhone">
+        {{ (isUkr)? "Номер телефону" : "Номер телефона" }}
+      </label>
+      <div class="input-group mb-2">
+          <div class="input-group-prepend">
+              <div class="input-group-text">+38</div>
+          </div>
+          <input required type="tel" class="form-control" id = "inputPhone" name = "inputPhone" 
+          placeholder="{{ (isUkr)? 'Ваш номер телефону?' : 'Ваш номер телефона?' }} ">
+      </div>
+  </div>
+</div>
+<div class="col-md-6 col-sm-12">
+    <div class="form-group contacts-mail-form-select">
+        <label for="inputSelect">
+          {{ (isUkr)? "Вид послуги" : "Вид услуги" }}
+        </label>
+        <select required type="text" class="form-control" id = "inputSelect" name = "inputSelect">
+          <option selected disabled value="">
+            {{ (isUkr)? "Виберіть послугу" : "Выбeрите услугу" }}
+          </option>
+          <option *ngFor="let item of services" value="{{ (isUkr)? item.name_ukr : item.name_rus }}">
+            {{ (isUkr)? item.name_ukr : item.name_rus }}  
+          </option>
+        </select>
+    </div>
+    <div class="form-group contacts-mail-form-msg">
+        <label for="inputMsg">
+          {{ (isUkr)? "Повідомлення" : "Сообщение" }}
+        </label>
+        <textarea type="text" class="form-control" id = "inputMsg" name = "inputMsg"></textarea>
+    </div>
+</div>
+<div class="col-12">
+    <button type="submit" class="btn btn-primary">
+      {{ (isUkr)? "Надіслати" : "Отправить" }}
+    </button>
+</div>
+</div>
+</form> -->

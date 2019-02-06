@@ -1,0 +1,64 @@
+input.ng-touched.ng-invalid, select.ng-touched.ng-invalid {
+    border:solid red 2px;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255,0,0, 0.7);
+            box-shadow: 0 0 0 0.2rem rgba(255,0,0, 0.7);
+}
+input.ng-touched.ng-valid, select.ng-touched.ng-valid {
+    border:solid green 2px;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0,255,0, 0.7);
+            box-shadow: 0 0 0 0.2rem rgba(0,255,0, 0.7);
+}
+
+.contacts-mail {
+    padding: 20px 40px; 
+}
+.contacts-mail-intro {
+    width: 100%; 
+}
+alert{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+alert.invalid-field .alert{
+    line-height: 1;
+    margin-top: 5px;
+}
+
+.contacts-mail-form {
+    width: 60%;
+    margin: auto;
+    
+}
+.align-items-center{
+    margin: auto;
+}
+.contacts-mail-form label {
+    margin-bottom: 0px; 
+}
+textarea {
+    text-align: left;
+    height: 116px;
+    resize: none; 
+}
+.contacts-mail-form input:focus, .contacts-mail-form select:focus, .contacts-mail-form textarea:focus, .contacts-mail-form button:focus {
+    border-color: #FF6B50;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7);
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 80, 0.7); 
+}
+.contacts-mail-form button {
+    background-color: #FF6B50;
+    opacity: 0.8;
+    border: none; 
+}
+/* .contacts-mail-form button:not(:disabled){
+    border: 1px solid #FF6B50;
+} */
+.contacts-mail-form button:not(:disabled):hover {
+    background-color: #FF6B50;
+    border: none;
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease;
+        -o-transition: opacity 0.25s ease;
+            transition: opacity 0.25s ease; 
+}

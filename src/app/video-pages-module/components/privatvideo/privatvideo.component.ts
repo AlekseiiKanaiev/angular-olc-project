@@ -5,6 +5,7 @@ import { LangSevice } from 'src/app/_services/lang.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { TitleSerice } from 'src/app/_services/titleService.service';
 
 @Component({
   selector: 'app-privatvideo',
@@ -17,7 +18,7 @@ export class PrivatvideoComponent implements OnInit, OnDestroy {
   private isUkr = true;
   private lang = 'ukr';
 
-  constructor(private langServ: LangSevice, private router: Router) { }
+  constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }
 
   ngOnInit() {
     this.getLang();
@@ -30,6 +31,8 @@ export class PrivatvideoComponent implements OnInit, OnDestroy {
       () => {
         this.lang = this.langServ.obsLang.getValue();
         this.isUkr = (this.lang === 'ukr');
+        const name = (this.isUkr) ? 'Відео для приватних клієнтів' : 'видео для часных клиентов';
+        this.titleServ.setTitle(name);
       }
     );
   }

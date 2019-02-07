@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LangSevice } from 'src/app/_services/lang.service';
 import { CheckDEviceService } from 'src/app/_services/checkDevice.service';
 import { Video } from 'src/app/_models/video.model';
-import { User } from 'src/app/_models/user.model';
 import store from '../../_store/store';
+import { TitleSerice } from 'src/app/_services/titleService.service';
 
 @Component({
     selector: 'app-main-page-comp',
@@ -19,10 +19,10 @@ export class MainPageComponent implements OnInit {
     private isVideo = false;
 
     constructor (private langServ: LangSevice,
-                private chdev: CheckDEviceService) {}
+                private chdev: CheckDEviceService,
+                private titleServ: TitleSerice) {}
 
     ngOnInit() {
-        console.log('init main page');
         this.getLang();
         this.getVideo();
         this.isNotMob = (!this.chdev.checkDeviceMobile() && !this.chdev.checkDeviceTablet());
@@ -34,6 +34,8 @@ export class MainPageComponent implements OnInit {
           () => {
             this.lang = this.langServ.obsLang.getValue();
             this.isUkr = (this.lang === 'ukr');
+            const name = (this.isUkr) ? 'Головна' : 'Главная';
+            this.titleServ.setTitle(name);
           }
         );
     }

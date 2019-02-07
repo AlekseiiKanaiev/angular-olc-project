@@ -4,6 +4,7 @@ import { faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/app/_models/user.model';
 import { GetDataService } from 'src/app/_services/getData.service';
 import store from 'src/app/_store/store';
+import { TitleSerice } from 'src/app/_services/titleService.service';
 
 @Component({
   selector: 'app-contacts',
@@ -16,7 +17,7 @@ export class ContactsComponent implements OnInit {
   private mobileIcon = faMobileAlt;
   private user: User;
 
-  constructor(private langServ: LangSevice) { }
+  constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }
 
   ngOnInit() {
     this.getLang();
@@ -28,6 +29,8 @@ export class ContactsComponent implements OnInit {
       () => {
         this.lang = this.langServ.obsLang.getValue();
         this.isUkr = (this.lang === 'ukr');
+        const name = (this.isUkr) ? 'Контакти' : 'Контакты';
+        this.titleServ.setTitle(name);
       }
     );
   }

@@ -46,7 +46,9 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
   }
 
   private filterServices(type: string) {
+    console.log(this.services);
     if (this.services) {
+      console.log(1);
       this.photos = this.services.filter(el => el.type === type)
                                       .map(el => el['img_name']);
     }
@@ -55,6 +57,7 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
 
   private setGallery (type: string) {
     if (this.photos) {
+      console.log(2);
       this.galleryOptions = [
         {
           width: '100%',

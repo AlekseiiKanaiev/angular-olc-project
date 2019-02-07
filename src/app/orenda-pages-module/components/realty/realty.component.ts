@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LangSevice } from 'src/app/_services/lang.service';
+import { TitleSerice } from 'src/app/_services/titleService.service';
 
 @Component({
   selector: 'app-realty',
@@ -11,7 +12,7 @@ export class RealtyComponent implements OnInit {
   private isUkr = true;
   private orendaType = 'photo-realty';
 
-  constructor(private langServ: LangSevice) { }
+  constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }
 
   ngOnInit() {
     this.getLang();
@@ -22,6 +23,8 @@ export class RealtyComponent implements OnInit {
       () => {
         this.lang = this.langServ.obsLang.getValue();
         this.isUkr = (this.lang === 'ukr');
+        const name = (this.isUkr) ? 'Оренда приміщень' : 'Аренда помещений';
+        this.titleServ.setTitle(name);
       }
     );
   }

@@ -1,0 +1,29 @@
+@mixin respond-to($media) {
+    @if $media == handhelds {
+      @media only screen and (min-width: 460px) { @content; }
+    }
+    @else if $media == tablet-screens {
+      @media only screen and (min-width: 750px) { @content; }
+    }
+    @else if $media == medium-screens {
+      @media only screen and (min-width: 1350px) { @content; }
+    }
+    @else if $media == full-hd-screens {
+      @media only screen and (min-width: 1900px) { @content; }
+    }
+    @else if $media == more-than-1000 {
+      @media only screen and (max-width: 1000px) { @content; }
+    }
+}
+
+/* Usage */
+/*
+.class-name {
+  @include respond-to(handhelds) {}
+  @include respond-to(tablet-screens) {}
+  @include respond-to(medium-screens) {}
+  @include respond-to(full-hd-screens) {}
+
+  @include respond-to-vertical(more-than-985) {}
+}*/
+

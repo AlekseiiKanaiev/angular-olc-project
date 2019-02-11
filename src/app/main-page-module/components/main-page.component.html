@@ -1,13 +1,15 @@
-<div *ngIf="isNotMob; then thenBlock else elseBlock"></div>   
-<ng-template #thenBlock>
-    <app-video-tiser [isUkr] = 'isUkr'></app-video-tiser>
-</ng-template>  
-<ng-template #elseBlock>
-    <app-carousel-tiser [isUkr] = 'isUkr'></app-carousel-tiser>
-</ng-template>
-<app-advantages [isUkr] = 'isUkr'></app-advantages>
-<div *ngIf="isVideo">
-    <app-last-video [video] = 'lastVideo' [isUkr] = 'isUkr'></app-last-video>
+<div class="section golovna">
+    <div *ngIf="isNotMob; then thenBlock else elseBlock"></div>   
+    <ng-template #thenBlock>
+        <app-video-tiser [isUkr] = 'isUkr'></app-video-tiser>
+    </ng-template>  
+    <ng-template #elseBlock>
+        <app-carousel-tiser [isUkr] = 'isUkr'></app-carousel-tiser>
+    </ng-template>
+    <app-advantages [isUkr] = 'isUkr'></app-advantages>
+    <div *ngIf="isVideo">
+        <app-last-video [video] = 'lastVideo' [isUkr] = 'isUkr'></app-last-video>
+    </div>
+    <app-carousel-team [isUkr] = 'isUkr'></app-carousel-team>
 </div>
-<app-carousel-team [isUkr] = 'isUkr'></app-carousel-team>
 

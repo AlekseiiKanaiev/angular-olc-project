@@ -8,10 +8,10 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./last-video.component.css']
 })
 export class LastVideoComponent implements OnInit {
-  @Input() private isUkr: boolean;
-  @Input() private video: Video;
+  @Input() isUkr: boolean;
+  @Input() video: Video;
 
-  private safeUrl: SafeResourceUrl;
+  safeUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) { }
 

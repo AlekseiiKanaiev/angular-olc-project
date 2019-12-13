@@ -12,10 +12,10 @@ import { TitleSerice } from 'src/app/_services/titleService.service';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-  private lang: string;
-  private isUkr: boolean;
-  private mobileIcon = faMobileAlt;
-  private user: User;
+  lang: string;
+  isUkr: boolean;
+  mobileIcon = faMobileAlt;
+  user: User;
 
   constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }
 

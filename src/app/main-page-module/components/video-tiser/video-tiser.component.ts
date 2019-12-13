@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./video-tiser.component.css']
 })
 export class VideoTiserComponent implements OnInit {
-  @Input() private isUkr: boolean;
+  @Input() isUkr: boolean;
 
   constructor() { }
 

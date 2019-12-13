@@ -8,12 +8,12 @@ import { PageChangedEvent } from 'ngx-bootstrap';
   styleUrls: ['./video-list.component.css']
 })
 export class VideoListComponent implements OnInit {
-  @Input() private videos: Video[];
+  @Input() videos: Video[];
 
-  private curVideos: Video[];
-  private totalItems: number;
-  private itemsPerPage = 3;
-  private maxSize = 5;
+  curVideos: Video[];
+  totalItems: number;
+  itemsPerPage = 3;
+  maxSize = 5;
 
   constructor() { }
 

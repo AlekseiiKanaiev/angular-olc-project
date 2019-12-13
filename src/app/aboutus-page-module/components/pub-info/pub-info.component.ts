@@ -27,12 +27,12 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap';
   ]
 })
 export class PubInfoComponent implements OnInit {
-  @Input() private isUkr: boolean;
+  @Input() isUkr: boolean;
 
-  private services: Service[];
+  services: Service[];
   private servType = 'document';
-  private xIcon = faTimesCircle;
-  private isPressed = false;
+  xIcon = faTimesCircle;
+  isPressed = false;
   private modalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) { }

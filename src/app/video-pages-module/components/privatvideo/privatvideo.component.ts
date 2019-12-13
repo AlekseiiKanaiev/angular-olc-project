@@ -13,9 +13,9 @@ import { TitleSerice } from 'src/app/_services/titleService.service';
   styleUrls: ['./privatvideo.component.css']
 })
 export class PrivatvideoComponent implements OnInit, OnDestroy {
-  private videos: Video[];
-  private isVideo = false;
-  private isUkr = true;
+  videos: Video[];
+  isVideo = false;
+  isUkr = true;
   private lang = 'ukr';
 
   constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }

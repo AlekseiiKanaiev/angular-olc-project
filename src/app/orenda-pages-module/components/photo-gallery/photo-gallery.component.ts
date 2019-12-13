@@ -11,15 +11,15 @@ import { Service } from 'src/app/_models/service.model';
   styleUrls: ['./photo-gallery.component.css']
 })
 export class PhotoGalleryComponent implements OnInit, OnDestroy {
-  @Input() private orendaType: string;
+  @Input() orendaType: string;
 
   private services: Service[];
-  private photos: string[];
+  photos: string[];
 
-  private galleryOptions: NgxGalleryOptions[];
-  private galleryImages: NgxGalleryImage[] = [];
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[] = [];
 
-  private show = false;
+  show = false;
   private subs: Subscription;
 
   constructor(private loaderServ: LoaderService) { }

@@ -10,11 +10,11 @@ import { faMobileAlt, faLocationArrow } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  private isUkr = true;
+  isUkr = true;
   private lang = 'ukr';
-  private mainUser: User;
-  private mobileIcon = faMobileAlt;
-  private locationIcon = faLocationArrow;
+  mainUser: User;
+  mobileIcon = faMobileAlt;
+  locationIcon = faLocationArrow;
 
   constructor(private langServ: LangSevice, private getDataServ: GetDataService) { }
 

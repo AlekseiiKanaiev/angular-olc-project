@@ -12,9 +12,9 @@ import { TitleSerice } from 'src/app/_services/titleService.service';
 })
 export class OblvideoComponent implements OnInit {
   private lang = 'ukr';
-  private isUkr = true;
-  private videos: Video[];
-  private isVideo = false;
+  isUkr = true;
+  videos: Video[];
+  isVideo = false;
 
   constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }
 

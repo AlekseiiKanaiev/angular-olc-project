@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./orenda-button.component.css']
 })
 export class OrendaButtonComponent implements OnInit {
-  @Input() private isUkr: boolean;
+  @Input() isUkr: boolean;
 
   constructor() { }
 

@@ -10,10 +10,10 @@ import { faMobileAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private isUkr = true;
-  private lang = 'ukr';
-  private mainUser: User;
-  private mobileIcon = faMobileAlt;
+  isUkr = true;
+  lang = 'ukr';
+  mainUser: User;
+  mobileIcon = faMobileAlt;
 
   constructor(private langServ: LangSevice, private getDataServ: GetDataService) { }
 

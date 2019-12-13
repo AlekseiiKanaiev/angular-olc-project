@@ -11,7 +11,7 @@ import { TitleSerice } from 'src/app/_services/titleService.service';
 })
 export class AboutusComponent implements OnInit {
   private lang = 'ukr';
-  private isUkr = true;
+  isUkr = true;
   private users: User[];
 
   constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }

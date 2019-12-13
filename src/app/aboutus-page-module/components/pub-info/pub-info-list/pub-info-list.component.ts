@@ -8,9 +8,9 @@ import { Service } from 'src/app/_models/service.model';
   styleUrls: ['./pub-info-list.component.css']
 })
 export class PubInfoListComponent implements OnInit {
-  @Input() private services: Service[];
+  @Input() services: Service[];
 
-  private modalRef: BsModalRef;
+  modalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) { }
 

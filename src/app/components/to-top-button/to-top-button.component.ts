@@ -8,9 +8,9 @@ import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./to-top-button.component.css']
 })
 export class ToTopButtonComponent implements OnInit {
-  private isUkr = true;
+  isUkr = true;
   private lang = 'ukr';
-  private toTopIcon = faAngleDoubleUp;
+  toTopIcon = faAngleDoubleUp;
 
   constructor(private langServ: LangSevice) { }
 
@@ -27,7 +27,7 @@ export class ToTopButtonComponent implements OnInit {
     );
   }
 
-  private toTop() {
+  toTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 }

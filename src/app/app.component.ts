@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.css', '../media.css']
 })
 export class AppComponent implements OnInit {
-  private isScroll = false;
+  isScroll = false;
   private isPreload = false;
 
   subs: Subscription;

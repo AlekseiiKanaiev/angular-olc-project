@@ -10,15 +10,15 @@ import store from 'src/app/_store/store';
   styleUrls: ['./carousel-team.component.css']
 })
 export class CarouselTeamComponent implements OnInit {
-  @Input() private isUkr = true;
+  @Input() isUkr = true;
 
-  private users: User[];
+  users: User[];
 
-  private userIcon = faUser;
-  private angleLeft = faAngleLeft;
-  private angleRight = faAngleRight;
+  userIcon = faUser;
+  angleLeft = faAngleLeft;
+  angleRight = faAngleRight;
 
-  private myCarouselOptions = {
+  myCarouselOptions = {
     items: 3,
     loop: true,
     nav: true,

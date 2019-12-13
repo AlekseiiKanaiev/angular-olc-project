@@ -12,11 +12,11 @@ import { EmailData } from 'src/app/_models/emailData.model';
   styleUrls: ['./send-email-form.component.css']
 })
 export class SendEmailFormComponent implements OnInit {
-  @Input() private isUkr: boolean;
-  @Input() private lang: string;
-  private services: Service[];
+  @Input() isUkr: boolean;
+  @Input() lang: string;
+  services: Service[];
   private servType = 'service';
-  private alert: AlertModel;
+  alert: AlertModel;
 
   emailForm: FormGroup = new FormGroup({
     'name':       new FormControl('',

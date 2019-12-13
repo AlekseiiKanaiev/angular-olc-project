@@ -8,9 +8,9 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./video-item.component.css']
 })
 export class VideoItemComponent implements OnInit {
-  @Input() private video: Video;
+  @Input() video: Video;
 
-  private safeUrl: SafeResourceUrl;
+  safeUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) { }
 

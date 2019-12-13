@@ -12,11 +12,11 @@ import { TitleSerice } from 'src/app/_services/titleService.service';
 })
 export class MainPageComponent implements OnInit {
     private lang = 'ukr';
-    private isUkr = true;
-    private isNotMob = false;
+    isUkr = true;
+    isNotMob = false;
     private videos: Video[];
-    private lastVideo: Video;
-    private isVideo = false;
+    lastVideo: Video;
+    isVideo = false;
 
     constructor (private langServ: LangSevice,
                 private chdev: CheckDEviceService,

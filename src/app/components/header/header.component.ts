@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  private switchLang(lang: string) {
+  switchLang(lang: string) {
     if (this.lang !== lang) {
       this.langServ.setLang(lang);
     }

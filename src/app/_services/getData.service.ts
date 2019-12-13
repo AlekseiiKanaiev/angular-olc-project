@@ -8,12 +8,13 @@ import actions from '../_store/actions';
 import store from '../_store/store';
 import { EmailData } from '../_models/emailData.model';
 import { AlertModel } from '../_models/alert.model';
+import { API_URL } from '../env';
 
 const {SETMAINUSER, SETUSERS, SETVIDEOS, SETSERVICES} = actions;
 
 @Injectable()
 export class GetDataService {
-    private API_URL = 'http://127.0.0.1:5000';
+    // private API_URL = 'http://127.0.0.1:5000';
 
     obsMainUser: Subject<User> = new Subject<User>();
     obsUsers: Subject<User[]> = new Subject<User[]>();
@@ -25,23 +26,23 @@ export class GetDataService {
     constructor (private http: HttpClient) {}
 
     private getMainUser(): Observable<User> {
-        return this.http.get<User>(`${this.API_URL}/getMainUser`);
+        return this.http.get<User>(`${API_URL}/getMainUser`);
     }
 
     private getUsers(): Observable<User[]> {
-        return this.http.get<User[]>(`${this.API_URL}/getUsers`);
+        return this.http.get<User[]>(`${API_URL}/getUsers`);
     }
 
     private getVideos(): Observable<Video[]> {
-        return this.http.get<Video[]>(`${this.API_URL}/getVideos`);
+        return this.http.get<Video[]>(`${API_URL}/getVideos`);
     }
 
     private getServices(): Observable<Service[]> {
-        return this.http.get<Service[]>(`${this.API_URL}/getServices`);
+        return this.http.get<Service[]>(`${API_URL}/getServices`);
     }
 
     sendEmail(emailData: EmailData): Observable<AlertModel|any> {
-        return this.http.post(`${this.API_URL}/sendemail`, emailData);
+        return this.http.post(`${API_URL}/sendemail`, emailData);
     }
 
     setMainUser() {

@@ -1,5 +1,6 @@
 
 .my-header {
+  z-index: 1000;
   text-align: center;
   width: 100%; }
 .my-header .container-fluid {

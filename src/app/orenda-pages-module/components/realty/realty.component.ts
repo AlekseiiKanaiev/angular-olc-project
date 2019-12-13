@@ -9,8 +9,8 @@ import { TitleSerice } from 'src/app/_services/titleService.service';
 })
 export class RealtyComponent implements OnInit {
   private lang = 'ukr';
-  private isUkr = true;
-  private orendaType = 'photo-realty';
+  isUkr = true;
+  orendaType = 'photo-realty';
 
   constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }
 

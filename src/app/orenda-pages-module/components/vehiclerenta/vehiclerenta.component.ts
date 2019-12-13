@@ -14,8 +14,8 @@ import { TitleSerice } from 'src/app/_services/titleService.service';
 })
 export class VehiclerentaComponent implements OnInit {
   private lang = 'ukr';
-  private isUkr = true;
-  private orendaType = 'photo-transport';
+  isUkr = true;
+  orendaType = 'photo-transport';
 
   constructor(private langServ: LangSevice, private titleServ: TitleSerice) { }
 

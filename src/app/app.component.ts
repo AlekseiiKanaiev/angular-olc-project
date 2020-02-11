@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
   @HostListener('window:scroll')
   // В случае скрола выполняем функцию
   onWindowScroll() {
-    // Сравниваем текущее положение экрана и полную высоту экрана / 6
-    (window.pageYOffset > window.screen.width / 6) ?
+    // Сравниваем прокрученный экран и высоту экрана
+    (window.scrollY > window.innerHeight) ?
       this.isScroll = true :
       this.isScroll = false;
   }

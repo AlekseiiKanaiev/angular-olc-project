@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { User } from '../_models/user.model';
 import { Video } from '../_models/video.model';
@@ -42,7 +42,8 @@ export class GetDataService {
     }
 
     sendEmail(emailData: EmailData): Observable<AlertModel|any> {
-        return this.http.post(`${API_URL}/sendemail`, emailData);
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this.http.post(`${API_URL}/sendemail`, emailData, {headers: headers});
     }
 
     setMainUser() {

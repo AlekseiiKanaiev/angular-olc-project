@@ -14,8 +14,10 @@ import { EmailData } from 'src/app/_models/emailData.model';
 export class SendEmailFormComponent implements OnInit {
   @Input() isUkr: boolean;
   @Input() lang: string;
-  services: Service[];
+
   private servType = 'service';
+  services: Service[];
+  isSending = false;
   alert: AlertModel;
 
   emailForm: FormGroup = new FormGroup({
@@ -67,13 +69,20 @@ export class SendEmailFormComponent implements OnInit {
   }
 
   submit() {
+    this.isSending = true;
     this.getDataServ.sendEmail(this.emailForm.value).subscribe(
       (data: AlertModel) => {
         console.log(data);
-        this.alert = data;
+        this.isSending = false;
+        this.alert = {
+          msg_ukr: 'Повідомлення відправлено',
+          msg_rus: 'Запрос отправлен',
+          type: 'success'
+        };
       },
       (err) => {
         console.log(err);
+        this.isSending = false;
         this.alert = {
           msg_ukr: 'Помилка сервера',
           msg_rus: 'Ошибка сервера',

@@ -73,7 +73,7 @@
         </div>
         <div class="col-12">
             <div class="form-group">
-                <button class="btn btn-default" [disabled]="emailForm.invalid">
+                <button class="btn btn-default" [disabled]="emailForm.invalid || isSending">
                     Отправить
                 </button>
             </div>

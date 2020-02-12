@@ -1,10 +1,9 @@
-
 .my-header {
-  z-index: 1000;
+  z-index: 100;
   text-align: center;
   width: 100%; }
 .my-header .container-fluid {
-background-color: rgba(68, 68, 68, 0.8); }
+  background-color: rgba(68, 68, 68, 0.8); }
 .my-header .container-fluid .admin-link, .my-header .container-fluid .home-link {
   width: 100%;
   margin: auto; }
@@ -65,14 +64,18 @@ background-color: rgba(68, 68, 68, 0.8); }
   color: #FF6B50; }
 .my-header .h-phone {
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
   white-space: nowrap; }
 .my-header .h-phone .fa-mobile-alt {
-  margin-right: 8px;
+  /* margin-right: 0px; */
   font-size: 16px; }
     
-
+@media only screen and (max-width: 992px) {
+  .my-header .h-phone {
+    font-size: 16px; 
+  }
+}
 
 h1{
     font-size: 23px;

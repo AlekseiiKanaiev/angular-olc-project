@@ -1,5 +1,6 @@
 #my-carousel .carousel-item {
-    height: 85vh; }
+    /* height: 85vh;  */
+}
   
 #my-carousel .carousel-caption {
     text-shadow: 0 0 1rem #ff6b50;
@@ -29,11 +30,22 @@
 #my-carousel ol li {
     width: 15px;
     height: 15px;
-    -webkit-border-radius: 10px;
-            border-radius: 10px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
     margin: 0 6px; }
 #my-carousel ol li:hover {
     cursor: pointer; }
 
 #my-carousel ol .active {
     background-color: #FF6B50; }
+
+#my-carousel .fa-angle-left::before {
+    content: none;
+}
+
+#my-carousel .fa-angle-right::before {
+    content: none;
+}
+#my-carousel .fa-angle-left, #my-carousel .fa-angle-right {
+    font-size: 30px;
+}

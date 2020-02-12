@@ -26,7 +26,7 @@
         font-size: 16px; 
     }
     .my-header .h-phone .fa-mobile-alt {
-        margin-right: 3px;
+        /* margin-right: 3px; */
         font-size: 15px; 
     }
     .my-header .lang {
@@ -49,10 +49,10 @@
         width: 640px;
         height: 360px; 
     }
-    .oblvideo .title {
+    .oblvideo .title, .privatvideo .title {
         max-width: 640px; 
     }
-    .oblvideo iframe {
+    .oblvideo iframe, .privatvideo iframe {
         width: 640px;
         height: 360px; 
     }
@@ -81,7 +81,8 @@
     width: 80px; }
     .my-header .sm-h-phone .fa-mobile-alt, .my-simple-header .sm-h-phone .fa-mobile-alt {
     font-size: 14px;
-    margin-right: 5px; }
+    /* margin-right: 5px;  */
+}
     .my-header .menu .nav-link, .my-simple-header .menu .nav-link {
     margin-top: 0px;
     padding: 10px; }
@@ -103,10 +104,10 @@
 .golovna .last-video iframe {
     width: 352px;
     height: 240px; }
-.oblvideo iframe {
+.oblvideo iframe, .privatvideo iframe {
     width: 352px;
     height: 240px; }
-.oblvideo ul {
+.oblvideo ul, .privatvideo ul {
     font-size: 15px; }
 .my-footer .foot-name {
     text-align: center; }
@@ -146,12 +147,12 @@ h1, h2 {
     height: 180px; }
 .golovna .last-video-button .btn {
     font-size: 14px; }
-.oblvideo .title h6 {
+.oblvideo .title h6, .privatvideo .title h6 {
     font-size: 14px; }
-.oblvideo iframe {
+.oblvideo iframe, .privatvideo iframe {
     width: 240px;
     height: 180px; }
-.oblvideo ul {
+.oblvideo ul, .privatvideo ul {
     font-size: 14px;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;

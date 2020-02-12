@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainPageRouterModule } from './main-page.router.module';
 
 import { CarouselTeamModule } from '../carousel-team-module/carousel-team.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MainPageComponent } from './components/main-page.component';
 import { VideoTiserComponent } from './components/video-tiser/video-tiser.component';
@@ -17,7 +18,7 @@ import { LastVideoComponent } from './components/last-video/last-video.component
     CommonModule,
     MainPageRouterModule,
     // OwlModule,
-    // FontAwesomeModule,
+    FontAwesomeModule,
     CarouselTeamModule
   ],
   declarations: [
